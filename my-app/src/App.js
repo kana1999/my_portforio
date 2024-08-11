@@ -2,7 +2,8 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter, Link, Routes, Route } from 'react-router-dom';
 
-import { Header } from "./components/Header";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 import { Home } from "./components/Home";
 import { Page1 } from "./components/page1";
 import { Page2 } from "./components/page2";
@@ -20,13 +21,15 @@ function App() {
       <br />
       <Link to="/Page2">Page2</Link>
       <br />
-
+      <Link to="/Footer">Footer</Link>
+      <br />
       
       <Routes>
         <Route path="/" element={<Header />} />
         <Route path="/Home" element={<Home />} />
         <Route path="/Page1" element={<Page1 />} />
         <Route path="/Page2" element={<Page2 />} />
+        <Route path="/Footer" element={<Footer />} />
       </Routes>
     </div>
     </BrowserRouter>
