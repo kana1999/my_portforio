@@ -10,7 +10,7 @@ export const Home = () => {
             <p>〇〇のサービスについて</p>
             <br />
             <p>自分で旅行プランを立てるもよし、他人が立てたプランの閲覧や検索も！</p>
-            <Link to="/Home">Home</Link>
+            <Link to="/Page1">新規登録・ログイン</Link>
         </div>
     );
 };

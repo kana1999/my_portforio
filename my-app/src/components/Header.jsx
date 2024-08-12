@@ -11,13 +11,13 @@ const Header = () => {
             <nav>
                 <ul className="nav-links">
                     <li>
-                        <Link to="/">Home</Link>
+                    <Link to="/Page2">マイページ</Link>
                     </li>
                     <li>
-                    <Link to="/search">Search</Link>
+                    <Link to="/search">検索</Link>
                     </li>
                     <li>
-                    <Link to="/menu">Menu</Link>
+                    <Link to="/menu">メニュー</Link>
                     </li>
                 </ul>
             </nav>
