@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Footer.css';
 
-const Footer = () => {
+class Footer extends React.Component {
+    render() {
         return (
             <footer className='footer'>
                         <p>Have a nice day!</p>
@@ -15,5 +16,6 @@ const Footer = () => {
             </footer>
         );
     };
+}
 
 export default Footer;
