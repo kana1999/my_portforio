@@ -1,10 +1,13 @@
 import { Link } from "react-router-dom";
 
+import React from "react";
 export const Page1 = () => {
     return (
         <div>
             <h1>新規登録・ログインができます</h1>
-            <Link to="/Page1">Page1</Link>
+            <button>新規登録</button>
+            <button>ログイン</button>
+            <Link to="/Home">戻る</Link>
         </div>
     );
 };

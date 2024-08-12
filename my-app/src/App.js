@@ -23,7 +23,7 @@ function App() {
       <br />
       <Link to="/Page2">マイページ</Link>
       <br />
-      <Link to="/Page3">マイプランはここ</Link>
+      <Link to="/Page3">マイプラン1</Link>
       <br />
       <Link to="/Page4">みんなのプラン</Link>
       <br />

@@ -4,7 +4,7 @@ export const Page2 = () => {
     return (
         <div>
             <h1>ここはマイページです</h1>
-            <Link to="/Page2">Page2</Link>
+            <Link to="/Page3">プラン詳細を見る</Link>
         </div>
     );
 };
