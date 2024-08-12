@@ -11,19 +11,19 @@ import { Page3 } from "./components/page3";
 import { Page4 } from "./components/page4";
 
 
-function App() {
+class App extends React.Component {
+  render(){
   return (
     <BrowserRouter>
     <div className="App">
-      <Link to="/">Header</Link>
-      <br />
+      <Header />
       <Link to="/Home">説明</Link>
       <br />
       <Link to="/Page1">新規登録・ログイン</Link>
       <br />
       <Link to="/Page2">マイページ</Link>
       <br />
-      <Link to="/Page3">マイプラン1</Link>
+      <Link to="/Page3">マイプラン</Link>
       <br />
       <Link to="/Page4">みんなのプラン</Link>
       <br />
@@ -31,7 +31,6 @@ function App() {
       <br />
       
       <Routes>
-        <Route path="/" element={<Header />} />
         <Route path="/Home" element={<Home />} />
         <Route path="/Page1" element={<Page1 />} />
         <Route path="/Page2" element={<Page2 />} />
@@ -42,6 +41,7 @@ function App() {
     </div>
     </BrowserRouter>
   );
+}
 }
 
 export default App;

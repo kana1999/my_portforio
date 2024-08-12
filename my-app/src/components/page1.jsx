@@ -4,7 +4,7 @@ import React from "react";
 export const Page1 = () => {
     return (
         <div>
-            <h1>新規登録・ログインができます</h1>
+            <h1>ログイン</h1>
             <button>新規登録</button>
             <button>ログイン</button>
             <Link to="/Home">戻る</Link>
