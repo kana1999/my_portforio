@@ -19,8 +19,8 @@ class App extends React.Component {
       <Header />
       <Footer />
           <div className='App-body'>
-        <Link to="/Home">説明</Link>
-        <br />
+        {/*<Link to="/Home">説明</Link>
+        <br />*/}
         <Link to="/Page1">新規登録・ログイン</Link>
         <br />
         <Link to="/Page2">マイページ</Link>
