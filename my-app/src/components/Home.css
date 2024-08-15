@@ -11,21 +11,15 @@
     margin: 0 auto;
   }
   
-  .Container-top {
-    margin: 0 auto;
+  .Container-list {
+    display: block;
+    margin: 0, 20px;
     text-align: center;
-    
     top: 50%;
     left: 50%;
   }
   
-  .Container-list {
-    display: block;
-    margin: 0, 20px;
-  }
-  
   .C-li {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
+    width: 100px;
+    height: 100px;
   }
