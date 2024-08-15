@@ -1,24 +1,26 @@
 .Container {
     font-size: 15px;
     flex-direction: column;
+    display: inline-block;
+    width: 80%;
+    background-color: white;
   }
   
   .Container-header {
-    position: relative;
     width: 50%;
     margin: 0 auto;
   }
   
   .Container-top {
-    margin: 15px;
-    width: 80%;
+    margin: 0 auto;
     text-align: center;
-    background-color: white;
-    display: block;
+    
+    top: 50%;
+    left: 50%;
   }
   
-  .Container-list-detail {
-    display: flex;
+  .Container-list {
+    display: block;
     margin: 0, 20px;
   }
   

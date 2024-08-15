@@ -7,7 +7,6 @@ class Home extends React.Component {
      return (
         <section id="PlanExplanation">
             <div className="Container">
-                <div className="Container-top">
                     <div className="Container-header">
                         <h1>旅のしおりで旅行がさらに楽しめる！</h1>
                         <p>旅のしおりの作成と共有ができる〇〇です。無料かつアプリダウンロードも不要でブラウザがあれば旅行プランが作成可能。「女子旅」「卒業旅行」「社員旅行」「家族旅行」「一人旅」「修学旅行」の計画を立てよう。</p>
@@ -18,7 +17,7 @@ class Home extends React.Component {
                                 <img className="C-li" src="https://loosedrawing.com/assets/illustrations/png/701.png"></img>
                                 <h1>旅行プランを手軽に作成</h1>
                                 <br />
-                                <p>旅行プランを作成したら、家族や友だちに気軽に共有できます。</p>
+                                <p>テンプレートが用意されているので作りやすい</p>
                                 <br />
                                 <p>他のユーザーが作ったプランも見られるので、参考にできます。</p>
                                 <br />
@@ -29,13 +28,12 @@ class Home extends React.Component {
                         <div className="Container-list list-2">
                             <div className="Container-list-detail">
                                 <img className="C-li" src="https://loosedrawing.com/assets/illustrations/png/1180.png"></img>
-                                <h1>プランの作成や共有が簡単にできる！</h1>
+                                <h1>プランの共有が簡単にできる</h1>
                                 <br />
-                                <p>テンプレートが用意されているので作りやすい</p>
+                                <p>プランを作成したら、家族や友だちにURLで共有できます。</p>
                                 <br />
-                                <p>プランはURLで共有できるのでLINEのトークやノートに貼っておくと便利です。アプリ不要でブラウザがあれば見れるのでSNSでも共有しやすいです。</p>
+                                <p>LINEのトークやノートに貼っておくと便利です。アプリ不要でブラウザがあれば見れるのでSNSでも共有しやすいです。</p>
                             </div>
-                        </div>
                 </div>
                 <Link to="/Page1">新規登録・ログインする</Link>
                 <br />
