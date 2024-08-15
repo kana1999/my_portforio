@@ -14,20 +14,9 @@
 }
 
 .App h1 {
-  font-size: 17.5px;
+  font-size: 20px;
 }
 
-.App h2 {
-  font-size: 17.5px;
-}
-
-.App h3 {
-  font-size: 17.5px;
-}
-
-.Explanation {
-  font-size: 15px;
-}
 
 .App-logo {
   height: 40vmin;

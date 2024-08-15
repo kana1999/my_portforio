@@ -1,0 +1,29 @@
+.Container {
+    font-size: 15px;
+    flex-direction: column;
+  }
+  
+  .Container-header {
+    position: relative;
+    width: 50%;
+    margin: 0 auto;
+  }
+  
+  .Container-top {
+    margin: 15px;
+    width: 80%;
+    text-align: center;
+    background-color: white;
+    display: block;
+  }
+  
+  .Container-list-detail {
+    display: flex;
+    margin: 0, 20px;
+  }
+  
+  .C-li {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+  }
