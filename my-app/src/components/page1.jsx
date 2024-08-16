@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-
 import React from "react";
+import './page1.css';
+
 export const Page1 = () => {
         return (
             <div>
@@ -11,13 +12,10 @@ export const Page1 = () => {
                         <p>パスワード</p>
                         <input />
                         <br />
-                        <input
-                        type="submit"
-                        value="ログイン"
-                        />
+                        <button><Link to="/Page2" style={{textDecoration: 'none', color: 'black', padding: '20px'}}>ログイン</Link></button>
                     </form>
+                        <button><Link to="/Home" style={{textDecoration: 'none' ,color: 'black', padding: '20px'}}>サイトトップに戻る</Link></button>
                 </div>
-                <Link to="/Home">サイトトップに戻る</Link>
             </div>
         );
 }
