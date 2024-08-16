@@ -12,10 +12,13 @@ class Header extends React.Component {
                 <nav>
                     <ul className="nav-links">
                         <li>
+                        <Link to="/Home">サイトトップ</Link>
+                        </li>
+                        <li>
                         <Link to="/Page2">マイページ</Link>
                         </li>
                         <li>
-                        <Link to="/Page4">検索</Link>
+                        <Link to="/Page5">検索</Link>
                         </li>
                         <li>
                         <Link to="/menu">メニュー</Link>

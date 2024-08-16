@@ -4,11 +4,31 @@ import './page2.css';
 
 export const Page2 = () => {
     return (
-        <div className="MypageContainer">
-            <h1>マイページ</h1>
-            <button><Link to="/Page3" style={{textDecoration: 'none' ,color: 'black', padding: '20px'}}>プラン詳細を見る</Link></button>
-            <br />
-            <button><Link to="/Page4" style={{textDecoration: 'none' ,color: 'black', padding: '20px'}}>みんなのプランを見てみる</Link></button>
+        <div className="Container">
+            <div className="MypageContainer">
+                <h1>マイページ</h1>
+                <p>自分のプラン一覧が表示されます</p>
+                <button className="PlanDateil"><Link to="/Page3" style={{textDecoration: 'none' ,color: 'black', padding: '20px'}}>プラン詳細を見る</Link></button>
+                <br />
+                <button className="PlanDateil"><Link to="/Page4" style={{textDecoration: 'none' ,color: 'black', padding: '20px'}}>みんなのプランを見てみる</Link></button>
+            </div>
         </div>
     );
 };
+
+class Myplan extends React.Component {
+    render() {
+        return (
+            <div className="myplan-item">
+                <div className="myplan-name">{this.props.name}</div>
+                <img
+                 className="myplan-image"
+                 src={this.props.image}
+                 />
+
+            </div>
+        );
+    }
+}
+
+export default Myplan;

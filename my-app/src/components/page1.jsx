@@ -4,7 +4,7 @@ import './page1.css';
 
 export const Page1 = () => {
         return (
-            <div>
+            <div className="Container">
                 <div className="contact-form">
                     <form>
                         <p>メールアドレス</p>
@@ -12,9 +12,9 @@ export const Page1 = () => {
                         <p>パスワード</p>
                         <input />
                         <br />
-                        <button className="LoginButton"><Link to="/Page2" style={{textDecoration: 'none', color: 'black', padding: '20px'}}>ログイン</Link></button>
+                        <button className="PlanDateil"><Link to="/Page2" style={{textDecoration: 'none', color: 'black', padding: '20px'}}>ログイン</Link></button>
                     </form>
-                        <button className="LoginButton"><Link to="/Home" style={{textDecoration: 'none' ,color: 'black', padding: '20px'}}>サイトトップに戻る</Link></button>
+                        <button className="PlanDateil"><Link to="/Home" style={{textDecoration: 'none' ,color: 'black', padding: '20px'}}>サイトトップに戻る</Link></button>
                 </div>
             </div>
         );

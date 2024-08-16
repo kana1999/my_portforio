@@ -33,7 +33,7 @@ class Home extends React.Component {
                                 <p>スケジュールにいいね機能も付いているので候補に迷ったら投票して決めることも！</p>
                             </div>
                 </div>
-                <button className="SigninButton"><Link to="/Page1" style={{textDecoration: 'none' ,color: 'black', padding: '20px'}}>新規登録・ログインする</Link></button>
+                <button className="PlanDateil"><Link to="/Page1" style={{textDecoration: 'none' ,color: 'black', padding: '20px'}}>新規登録・ログインする</Link></button>
                 <br />
                 <div className="HowToUse">
                     <h1>使い方は？</h1>
@@ -49,7 +49,7 @@ class Home extends React.Component {
                     <p>しおりが完成したら旅行仲間にURLで共有</p>
                     <p>LINEのノートに貼ったり、ブックマークしておくとすぐに見れて便利です。アプリをダウンロードする必要がないのでスムーズに確認できます。</p>
                 </div>
-                <button className="SigninButton"><Link to="/Page1" style={{textDecoration: 'none' ,color: 'black', padding: '20px'}}>新規登録・ログインする</Link></button>
+                <button className="PlanDateil"><Link to="/Page1" style={{textDecoration: 'none' ,color: 'black', padding: '20px'}}>新規登録・ログインする</Link></button>
             </div>
         </section>
     );

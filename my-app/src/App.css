@@ -8,6 +8,22 @@
   width: 100vw;
 }
 
+.Container {
+  font-size: 15px;
+  flex-direction: column;
+  display: inline-block;
+  width: 80%;
+  height: 100%;
+  background-color: white;
+}
+
+.PlanDateil {
+    padding: 8px 20px;
+    border: solid 2px #ddd;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
 .App-body {
   flex: 1;
   overflow-y: scroll;
