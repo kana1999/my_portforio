@@ -12,9 +12,9 @@ export const Page1 = () => {
                         <p>パスワード</p>
                         <input />
                         <br />
-                        <button><Link to="/Page2" style={{textDecoration: 'none', color: 'black', padding: '20px'}}>ログイン</Link></button>
+                        <button className="LoginButton"><Link to="/Page2" style={{textDecoration: 'none', color: 'black', padding: '20px'}}>ログイン</Link></button>
                     </form>
-                        <button><Link to="/Home" style={{textDecoration: 'none' ,color: 'black', padding: '20px'}}>サイトトップに戻る</Link></button>
+                        <button className="LoginButton"><Link to="/Home" style={{textDecoration: 'none' ,color: 'black', padding: '20px'}}>サイトトップに戻る</Link></button>
                 </div>
             </div>
         );

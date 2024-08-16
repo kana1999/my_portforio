@@ -1,0 +1,6 @@
+.MypageContainer {
+    display: inline-block;
+    background-color: white;
+    width: 80%;
+    flex-direction: column;
+}
