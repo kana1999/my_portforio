@@ -27,13 +27,13 @@ class App extends React.Component {
               <Link to="/Page1">新規登録・ログイン</Link>
               <br />
               <Link to="/Page2">マイページ</Link>
-              <br />*/}
+              <br />
               <Link to="/Page3">マイプラン</Link>
               <br />
-              <Link to="/Page4">プラン例</Link>
+              <Link to="/Page4">プラン作成</Link>
               <br />
               <Link to="/Page5">みんなのプラン</Link>
-              <br />
+              <br />*/}
 
               <Routes>
                 <Route path="/Home" element={<Home />} />

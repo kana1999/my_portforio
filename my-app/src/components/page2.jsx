@@ -8,9 +8,9 @@ export const Page2 = () => {
             <div className="MypageContainer">
                 <h1>マイページ</h1>
                 <p>自分のプラン一覧が表示されます</p>
-                <button className="PlanDateil"><Link to="/Page3" style={{textDecoration: 'none' ,color: 'black', padding: '20px'}}>プラン詳細を見る</Link></button>
+                <button className="PlanDateil"><Link to="/Page3" style={{textDecoration: 'none' ,color: 'black', padding: '20px'}}>プラン（例）を見る</Link></button>
                 <br />
-                <button className="PlanDateil"><Link to="/Page4" style={{textDecoration: 'none' ,color: 'black', padding: '20px'}}>みんなのプランを見てみる</Link></button>
+                <button className="PlanDateil"><Link to="/Page5" style={{textDecoration: 'none' ,color: 'black', padding: '20px'}}>みんなのプランを見る</Link></button>
             </div>
         </div>
     );
