@@ -33,6 +33,7 @@ export const Page3 = () => {
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
+                        className="forms"
                     />
                     </div>
                     <div>
@@ -42,25 +43,24 @@ export const Page3 = () => {
                         name="date"
                         value={formData.date}
                         onChange={handleChange}
+                        className="forms"
                     />
                     </div>
                     <div>
-                        <label>スケジュール内容:</label>
+                    <label>スケジュール内容:</label>
                         <form method="POST" action="/">
-                            <table class="inputFields">
-                                <tr class="inputField">
-                                    <th>
-                                    <input 
-                                        type="text" 
-                                        name="caption"
-                                        value={formData.caption}
-                                        onChange={handleChange}
-                                    />
-                                    </th>
-                                    <td><button class="deleteFieldBtn">入力欄を削除</button></td>
-                                </tr>
-                            </table>
-                            <button class="addFieldBtn">入力欄を追加</button>
+                            <input 
+                                type="text" 
+                                name="caption"
+                                value={formData.caption}
+                                onChange={handleChange} 
+                                className="forms"
+                            />
+                            <button className="PlanDateil"><Link to="/Page4" style={{textDecoration: 'none' ,color: 'black', padding: '20px'}}>スケジュールを編集する</Link></button>
+                            <br />
+                            <button class="deleteFieldBtn">スケジュールを削除</button>
+                            <br />
+                            <button class="addFieldBtn">スケジュールを追加</button>
                         </form>
                         {/*<input
                             type="text"
@@ -77,6 +77,7 @@ export const Page3 = () => {
                         name="gender"
                         value={formData.gender}
                         onChange={handleChange}
+                        className="forms"
                     />
                     </div>
                     <div>
@@ -86,6 +87,7 @@ export const Page3 = () => {
                         name="age"
                         value={formData.age}
                         onChange={handleChange}
+                        className="forms"
                     />
                     </div>
                     <div>
@@ -95,11 +97,11 @@ export const Page3 = () => {
                         name="cost"
                         value={formData.cost}
                         onChange={handleChange}
+                        className="forms"
                     />
                     </div>
                     <button type="submit">登録</button>
                 </form>
-                <button className="PlanDateil"><Link to="/Page4" style={{textDecoration: 'none' ,color: 'black', padding: '20px'}}>スケジュールを編集する</Link></button>
                 <br />
                 <button className="PlanDateil"><Link to="/Page2" style={{textDecoration: 'none' ,color: 'black', padding: '20px'}}>マイページに戻る</Link></button>
             </div>

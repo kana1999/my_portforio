@@ -1,0 +1,9 @@
+.forms {
+    display: inline-block;
+    width: 50%;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    margin-top: 25px;
+    height: 30px;
+}

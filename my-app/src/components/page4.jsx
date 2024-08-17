@@ -29,6 +29,7 @@ export const Page4 = () => {
                         name="title"
                         value={formData.title}
                         onChange={handleChange}
+                        className="forms"
                     />
                     </div>
                     <div>
@@ -38,6 +39,7 @@ export const Page4 = () => {
                         name="time"
                         value={formData.time}
                         onChange={handleChange}
+                        className="forms"
                     />
                     </div>
                     <div>
@@ -47,6 +49,7 @@ export const Page4 = () => {
                         name="site"
                         value={formData.site}
                         onChange={handleChange}
+                        className="forms"
                     />
                     </div>
                     <div>
@@ -56,6 +59,7 @@ export const Page4 = () => {
                         name="location"
                         value={formData.location}
                         onChange={handleChange}
+                        className="forms"
                     />
                     </div>
                     <div>
@@ -63,10 +67,10 @@ export const Page4 = () => {
                     <textarea 
                         type="text"
                         value={formData.memo}
+                        className="forms"
                         >
                     </textarea>
                     </div>
-                <button type="submit">スケジュール追加</button>
                 <button type="submit">登録</button>
             </form>
             <button className="PlanDateil"><Link to="/Page3" style={{textDecoration: 'none' ,color: 'black', padding: '20px'}}>前のページに戻る</Link></button>
@@ -83,24 +87,6 @@ export const Page4 = () => {
                     <div id="schedule-box" className="form-summary">
                         <div className="card-header">
                             <input type="text" placeholder="所在地" />
-                        </div>
-                    </div>
-                <h2>性別</h2>
-                    <div id="schedule-box" className="form-summary">
-                        <div className="card-header">
-                            <input type="text" placeholder="選択式で" />
-                        </div>
-                    </div>
-                <h2>年齢</h2>
-                    <div id="schedule-box" className="form-summary">
-                        <div className="card-header">
-                            <input type="text" placeholder="数字で打ち込む" />
-                        </div>
-                    </div>
-                <h2>全体の予算</h2>
-                    <div id="schedule-box" className="form-summary">
-                        <div className="card-header">
-                            <input type="text" placeholder="大まかで" />
                         </div>
                     </div>
                 <h2>メモ</h2>
