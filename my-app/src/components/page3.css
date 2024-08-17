@@ -1,9 +1,35 @@
+.PlanExsample {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
 .forms {
-    display: inline-block;
-    width: 50%;
+    width: fit-content;
     background-color: #fff;
-    background-clip: padding-box;
     border: 1px solid #ced4da;
-    margin-top: 25px;
+    margin:auto;
     height: 30px;
+    position: relative;
+    display: flex;
+    box-sizing: border-box;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+label {
+    display: inline-block;
+    width: 150px;
+    vertical-align: top;
+}
+
+.forms th {
+    text-align: left;
+    vertical-align:top;
+}
+
+#Backpage {
+    display: block;
+    margin: auto auto 0 auto;
 }

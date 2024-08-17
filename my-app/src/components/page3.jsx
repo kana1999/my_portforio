@@ -24,86 +24,95 @@ export const Page3 = () => {
     return (
         <div className="Container">
             <div className="PlanExsample">
-                <h1>プラン</h1>
-                <form onSubmit={Savedata}>
-                    <div>
-                    <label>プラン名:</label>
-                    <input
-                        type="text"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        className="forms"
-                    />
-                    </div>
-                    <div>
-                    <label>日付:</label>
-                    <input
-                        type="text"
-                        name="date"
-                        value={formData.date}
-                        onChange={handleChange}
-                        className="forms"
-                    />
-                    </div>
-                    <div>
-                    <label>スケジュール内容:</label>
-                        <form method="POST" action="/">
-                            <input 
-                                type="text" 
-                                name="caption"
-                                value={formData.caption}
-                                onChange={handleChange} 
-                                className="forms"
-                            />
-                            <button className="PlanDateil"><Link to="/Page4" style={{textDecoration: 'none' ,color: 'black', padding: '20px'}}>スケジュールを編集する</Link></button>
-                            <br />
-                            <button class="deleteFieldBtn">スケジュールを削除</button>
-                            <br />
-                            <button class="addFieldBtn">スケジュールを追加</button>
-                        </form>
+                    <h1>プラン</h1>
+                {/*<form onSubmit={Savedata}>*/}
+                    <div className="forms">
+                    <table>
+                        <tr>
+                            <th><label>プラン名:</label></th>
+                                <td>
+                                    <input
+                                    type="text"
+                                    name="name"
+                                    value={formData.name}
+                                    onChange={handleChange}
+                                    />
+                                </td>
+                        </tr>
+                        <tr>
+                            <th><label>日付:</label></th>
+                                <td>
+                                    <input
+                                    type="text"
+                                    name="date"
+                                    value={formData.date}
+                                    onChange={handleChange}
+                                    />
+                                </td>
+                        </tr>
+                        <tr>
+                            <th><label>スケジュール内容:</label></th>
+                                {/*<div method="POST" action="/">*/}
+                                    <td>
+                                    <input 
+                                    type="text" 
+                                    name="caption"
+                                    value={formData.caption}
+                                    onChange={handleChange}
+                                    />
+                                    </td>
+                                <button className="PlanDateil"><Link to="/Page4" style={{textDecoration: 'none' ,color: 'black', padding: '20px'}}>スケジュールを編集する</Link></button>
+                                <br />
+                                <button class="deleteFieldBtn">スケジュールを削除</button>
+                                <br />
+                                <button class="addFieldBtn">スケジュールを追加</button>
+                                {/*</div>*/}
                         {/*<input
                             type="text"
                             name="caption"
                             value={formData.caption}
                             onChange={handleChange}
                         />*/}
-                    </div>
-                    <br />
-                    <div>
-                    <label>性別:</label>
-                    <input
-                        type="text"
-                        name="gender"
-                        value={formData.gender}
-                        onChange={handleChange}
-                        className="forms"
-                    />
-                    </div>
-                    <div>
-                    <label>年齢:</label>
-                    <input
-                        type="text"
-                        name="age"
-                        value={formData.age}
-                        onChange={handleChange}
-                        className="forms"
-                    />
-                    </div>
-                    <div>
-                    <label>大まかな予算:</label>
-                    <input
-                        type="text"
-                        name="cost"
-                        value={formData.cost}
-                        onChange={handleChange}
-                        className="forms"
-                    />
-                    </div>
+                        </tr>
+                        <tr>
+                            <th><label>性別:</label></th>
+                                <td>
+                                <input
+                                type="text"
+                                name="gender"
+                                value={formData.gender}
+                                onChange={handleChange}
+                                />
+                                </td>
+                        </tr>
+                        <tr>
+                            <th><label>年齢:</label></th>
+                                <td>
+                                    <input
+                                    type="text"
+                                    name="age"
+                                    value={formData.age}
+                                    onChange={handleChange}
+                                    />
+                                </td>
+                        </tr>
+                        <tr>
+                            <th><label>大まかな予算:</label></th>
+                               <td>
+                                <input
+                                type="text"
+                                name="cost"
+                                value={formData.cost}
+                                onChange={handleChange}
+                                />
+                                </td>
+                        </tr>
+                    </table>
                     <button type="submit">登録</button>
-                </form>
+                    </div>
+                {/*</form>*/}
                 <br />
-                <button className="PlanDateil"><Link to="/Page2" style={{textDecoration: 'none' ,color: 'black', padding: '20px'}}>マイページに戻る</Link></button>
+                <button className="PlanDateil" id="Backpage"><Link to="/Page2" style={{textDecoration: 'none' ,color: 'black', padding: '20px'}}>マイページに戻る</Link></button>
             </div>
         </div>
     );

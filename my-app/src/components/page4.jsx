@@ -66,7 +66,9 @@ export const Page4 = () => {
                     <label>メモ</label>
                     <textarea 
                         type="text"
+                        name="memo"
                         value={formData.memo}
+                        onChange={handleChange}
                         className="forms"
                         >
                     </textarea>
