@@ -20,7 +20,7 @@ export const Page4 = () => {
     return (
         <body>
             <div className="Container" style={{paddingLeft:'0px', paddingRight:'0px'}}>
-            <h1>プランを作成/編集</h1>
+            <h1>スケジュールを作成/編集</h1>
             <form onSubmit={Savedata}>
                     <div>
                     <label>スケジュール名:</label>
@@ -69,6 +69,7 @@ export const Page4 = () => {
                 <button type="submit">スケジュール追加</button>
                 <button type="submit">登録</button>
             </form>
+            <button className="PlanDateil"><Link to="/Page3" style={{textDecoration: 'none' ,color: 'black', padding: '20px'}}>前のページに戻る</Link></button>
                 <h1>プランを作成しよう</h1>
                 {/*<button className="PlanDateil"><Link to="/Page4" style={{textDecoration: 'none' ,color: 'black', padding: '20px'}}>編集</Link></button>*/}
                 <input id="PlanName1" type="text" placeholder="プラン名"/>

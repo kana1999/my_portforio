@@ -45,13 +45,29 @@ export const Page3 = () => {
                     />
                     </div>
                     <div>
-                    <label>スケジュール内容:</label>
-                    <input
-                        type="text"
-                        name="caption"
-                        value={formData.caption}
-                        onChange={handleChange}
-                    />
+                        <label>スケジュール内容:</label>
+                        <form method="POST" action="/">
+                            <table class="inputFields">
+                                <tr class="inputField">
+                                    <th>
+                                    <input 
+                                        type="text" 
+                                        name="caption"
+                                        value={formData.caption}
+                                        onChange={handleChange}
+                                    />
+                                    </th>
+                                    <td><button class="deleteFieldBtn">入力欄を削除</button></td>
+                                </tr>
+                            </table>
+                            <button class="addFieldBtn">入力欄を追加</button>
+                        </form>
+                        {/*<input
+                            type="text"
+                            name="caption"
+                            value={formData.caption}
+                            onChange={handleChange}
+                        />*/}
                     </div>
                     <br />
                     <div>
