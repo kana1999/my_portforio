@@ -14,7 +14,7 @@ class Home extends React.Component {
                         <p>「女子旅」「卒業旅行」「社員旅行」「家族旅行」「一人旅」「修学旅行」の計画を立ててみませんか？</p>
                     </div>
                     <br />
-                        <div className="Container-list list-1">
+                        <div className="Container-list-parent">
                             <div className="Container-list-detail">
                                 <img className="C-li" src="https://loosedrawing.com/assets/illustrations/png/701.png"></img>
                                 <h1>旅行プランを手軽に作成</h1>
@@ -22,9 +22,7 @@ class Home extends React.Component {
                                 <p>他のユーザーが作ったプランも見られるので、参考にできます。</p>
                                 <p>他のユーザーのプランは一覧で見るだけでなく、絞り込み検索もできるので目的やイメージに合ったプランを探すことができます。</p>
                             </div>
-                        </div>
                     <br />
-                        <div className="Container-list list-2">
                             <div className="Container-list-detail">
                                 <img className="C-li" src="https://loosedrawing.com/assets/illustrations/png/1180.png"></img>
                                 <h1>プランの共有が簡単にできる</h1>

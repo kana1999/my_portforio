@@ -11,6 +11,7 @@ export const Page3 = () => {
         gender: "",
         age: "",
         cost: "",
+        person: ""
     })
 
     const handleChange = (e) => { 
@@ -22,46 +23,52 @@ export const Page3 = () => {
     }
 
     return (
-        <div className="Container">
+        <div className="Container" style={{paddingLeft:'0px', paddingRight:'0px'}}>
             <div className="PlanExsample">
                     <h1>プラン</h1>
-                {/*<form onSubmit={Savedata}>*/}
-                    <div className="forms">
+                <form onSubmit={Savedata}>
+                    {/*<div className="forms">*/}
                     <table>
                         <tr>
                             <th><label>プラン名:</label></th>
                                 <td>
-                                    <input
+                                <input
                                     type="text"
                                     name="name"
                                     value={formData.name}
                                     onChange={handleChange}
-                                    />
+                                />
                                 </td>
                         </tr>
                         <tr>
                             <th><label>日付:</label></th>
                                 <td>
-                                    <input
+                                <input
                                     type="text"
                                     name="date"
                                     value={formData.date}
                                     onChange={handleChange}
-                                    />
+                                />
                                 </td>
                         </tr>
-                        <tr>
+                        {/*<form method="POST" action="">
+                        <table class="inputFields">
+                            <tr class="inputField">*/}
+                            <tr>
                             <th><label>スケジュール内容:</label></th>
-                                {/*<div method="POST" action="/">*/}
-                                    <td>
-                                    <input 
+                                <td>
+                                <input 
                                     type="text" 
-                                    name="caption"
-                                    value={formData.caption}
+                                    name="content[]"
+                                    value={formData.content}
                                     onChange={handleChange}
-                                    />
-                                    </td>
-                                <button className="PlanDateil"><Link to="/Page4" style={{textDecoration: 'none' ,color: 'black', padding: '20px'}}>スケジュールを編集する</Link></button>
+                                />
+                                </td>
+                                <button className="PlanDateil">
+                                    <Link to="/Page4" 
+                                    style={{textDecoration: 'none' ,color: 'black', padding: '20px'}}>
+                                        スケジュールを編集する</Link>
+                                        </button>
                                 <br />
                                 <button class="deleteFieldBtn">スケジュールを削除</button>
                                 <br />
@@ -73,6 +80,19 @@ export const Page3 = () => {
                             value={formData.caption}
                             onChange={handleChange}
                         />*/}
+                        </tr>
+                        {/*</table>
+                        </form>*/}
+                        <tr>
+                            <th><label>人数:</label></th>
+                               <td>
+                                <input
+                                type="text"
+                                name="person"
+                                value={formData.person}
+                                onChange={handleChange}
+                                />
+                                </td>
                         </tr>
                         <tr>
                             <th><label>性別:</label></th>
@@ -88,12 +108,12 @@ export const Page3 = () => {
                         <tr>
                             <th><label>年齢:</label></th>
                                 <td>
-                                    <input
+                                <input
                                     type="text"
                                     name="age"
                                     value={formData.age}
                                     onChange={handleChange}
-                                    />
+                                />
                                 </td>
                         </tr>
                         <tr>
@@ -109,8 +129,8 @@ export const Page3 = () => {
                         </tr>
                     </table>
                     <button type="submit">登録</button>
-                    </div>
-                {/*</form>*/}
+                    {/*</div>*/}
+                </form>
                 <br />
                 <button className="PlanDateil" id="Backpage"><Link to="/Page2" style={{textDecoration: 'none' ,color: 'black', padding: '20px'}}>マイページに戻る</Link></button>
             </div>

@@ -29,7 +29,6 @@ export const Page4 = () => {
                         name="title"
                         value={formData.title}
                         onChange={handleChange}
-                        className="forms"
                     />
                     </div>
                     <div>
@@ -39,7 +38,6 @@ export const Page4 = () => {
                         name="time"
                         value={formData.time}
                         onChange={handleChange}
-                        className="forms"
                     />
                     </div>
                     <div>
@@ -49,7 +47,6 @@ export const Page4 = () => {
                         name="site"
                         value={formData.site}
                         onChange={handleChange}
-                        className="forms"
                     />
                     </div>
                     <div>
@@ -59,7 +56,6 @@ export const Page4 = () => {
                         name="location"
                         value={formData.location}
                         onChange={handleChange}
-                        className="forms"
                     />
                     </div>
                     <div>
@@ -69,7 +65,6 @@ export const Page4 = () => {
                         name="memo"
                         value={formData.memo}
                         onChange={handleChange}
-                        className="forms"
                         >
                     </textarea>
                     </div>
