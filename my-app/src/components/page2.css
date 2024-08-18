@@ -1,0 +1,13 @@
+.MypageContainer {
+    display: inline-block;
+    background-color: white;
+    width: 80%;
+    flex-direction: column;
+}
+
+.PlanDateil {
+    padding: 8px 20px;
+    border: solid 2px #ddd;
+    border-radius: 10px;
+    margin-top: 10px;
+}
