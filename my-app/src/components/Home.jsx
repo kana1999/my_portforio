@@ -29,20 +29,20 @@ class Home extends React.Component {
                                 <p>プランを作成したら、家族や友だちにURLで共有できます。</p>
                                 <p>LINEのトークやノートに貼っておくと便利です。アプリ不要でブラウザがあれば見れるのでSNSでも共有しやすいです。</p>
                                 <p>スケジュールにいいね機能も付いているので候補に迷ったら投票して決めることも！</p>
-                            </div>
-                </div>
+                        </div>
+                    </div>
                 <button className="PlanDateil"><Link to="/Page1" style={{textDecoration: 'none' ,color: 'black', padding: '20px'}}>新規登録・ログインする</Link></button>
                 <br />
                 <div className="HowToUse">
                     <h1>使い方は？</h1>
                     <img className="HTU" src="https://loosedrawing.com/assets/illustrations/png/1451.png"></img>
                     <br />
-                    <h3>〜旅のしおりを作成〜</h3>
+                    <h1>〜旅のしおりを作成〜</h1>
                     <br />
                     <p>旅行プランのスケジュールを作成</p>
                     <p>行く場所や泊まる場所、URL…etcを入力し、「登録」ボタンを押して完成。何度も編集可能なので急なスケジュール変更にも対応できます。</p>
                     <br />
-                    <h3>〜旅行仲間に旅のしおりを共有〜</h3>
+                    <h1>〜旅行仲間に旅のしおりを共有〜</h1>
                     <br />
                     <p>しおりが完成したら旅行仲間にURLで共有</p>
                     <p>LINEのノートに貼ったり、ブックマークしておくとすぐに見れて便利です。アプリをダウンロードする必要がないのでスムーズに確認できます。</p>
