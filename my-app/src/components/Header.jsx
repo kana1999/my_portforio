@@ -21,7 +21,7 @@ class Header extends React.Component {
                         <Link to="/Page5">検索</Link>
                         </li>
                         <li>
-                        <Link to="#">メニュー</Link>
+                        <Link to="/menu">メニュー</Link>
                         </li>
                     </ul>
                 </nav>
