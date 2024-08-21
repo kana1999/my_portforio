@@ -3,6 +3,7 @@ import './App.css';
 import { BrowserRouter, Link, Routes, Route } from 'react-router-dom';
 
 import Header from "./components/Header";
+import Burger from './components/Burger';
 //import Footer from "./components/Footer";//
 import  Home  from "./components/Home";
 import { Page1 } from "./components/page1";
@@ -18,6 +19,7 @@ class App extends React.Component {
       <BrowserRouter>
         <div className="App">
           <Header />
+          <Burger />
           {/*
           <Footer />
           */}
