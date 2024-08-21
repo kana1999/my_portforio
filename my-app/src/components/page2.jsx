@@ -16,6 +16,8 @@ export const Page2 = () => {
     );
 };
 
+
+//以下は試しに書いたコードです//
 class Myplan extends React.Component {
     render() {
         return (
