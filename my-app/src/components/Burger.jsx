@@ -16,7 +16,7 @@ class Burger extends React.Component{
               <a id="Page2" className="menu-item" href="/Page2">マイページ</a>
               <a id="Page3" className="menu-item" href="/Page3">プラン作成</a>
               <a id="Page5" className="menu-item" href="/Page5">プラン検索</a>
-              <a onClick={ this.showSettings } className="menu-item--small" href="">Settings</a>
+              <a onClick={ this.showSettings } className="menu-item--small" href="#">Settings</a>
             </main>
           </Menu>
         </div>
