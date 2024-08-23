@@ -19,8 +19,8 @@ class App extends React.Component {
       <BrowserRouter>
         <div className="App">
           <Header />
-          <Burger />
-          {/*
+          {/*<Burger />
+          
           <Footer />
           */}
             <div className='App-body'>
