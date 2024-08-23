@@ -1,15 +1,3 @@
-/* 
-#page-wrap a {
-    display: block;
-    color: #fff;
-  }
-
-  .bm-burger-button {
-    left: initial;
-    right: 36px;
-  }
-*/
-
   /* Position and sizing of burger button */
 .bm-burger-button {
     position: fixed;
@@ -54,6 +42,7 @@
     background: #9FD8DF;
     padding: 2.5em 1.5em 0;
     font-size: 1.15em;
+    text-align: left;
   }
   
   /* Morph shape necessary with bubble or elastic */

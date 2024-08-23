@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import './Header.css';
+import Burger from "./Burger.jsx";
 
 class Header extends React.Component {
     render() {
@@ -10,7 +11,8 @@ class Header extends React.Component {
                 Travel Guide
                 </Link>
                 <nav>
-                    <ul className="nav-links">
+                    <Burger />
+                    {/*<ul className="nav-links">
                         <li>
                         <Link to="/Home">サイトトップ</Link>
                         </li>
@@ -23,7 +25,7 @@ class Header extends React.Component {
                         <li>
                         <Link to="#">メニュー</Link>
                         </li>
-                    </ul>
+                    </ul>*/}
                 </nav>
             </header>
             );
