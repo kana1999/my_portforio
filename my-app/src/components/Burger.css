@@ -1,3 +1,17 @@
+/* Hide the burger menu on large screens (>= 992px) */
+@media (min-width: 992px) {
+    .bm-burger-button {
+      display: none;
+    }
+  }
+  
+  /* Show the Bootstrap nav bar only on large screens */
+  @media (max-width: 991px) {
+    .navbar {
+      display: none;
+    }
+  }
+  
 
 /* Position and sizing of burger button */
 .bm-burger-button {
