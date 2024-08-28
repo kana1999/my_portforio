@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import './Header.css';
 import Burger from "./Burger.jsx";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Header extends React.Component {
     render() {
@@ -10,7 +11,7 @@ class Header extends React.Component {
                 <Link to="#" className="logo">
                 Travel Guide
                 </Link>
-                <nav>
+                <nav className="navber d-none d-lg-block">
                     
                     <ul className="nav-links">
                         <li>

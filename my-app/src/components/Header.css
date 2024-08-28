@@ -20,6 +20,7 @@
 
 .nav-links {
     display: flex;
+    margin-top: 16px;
 }
 
 .nav-links li {
@@ -36,3 +37,18 @@
 .nav-links li a:hover {
     color: #FF7171;
 }
+
+/* Hide the burger menu on large screens (>= 992px) */
+@media (min-width: 992px) {
+    .bm-burger-button {
+      display: none;
+    }
+  }
+  
+  /* Show the Bootstrap nav bar only on large screens */
+  @media (max-width: 991px) {
+    .navbar {
+      display: none;
+    }
+  }
+  
