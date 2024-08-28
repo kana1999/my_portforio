@@ -10,7 +10,7 @@ class Burger extends React.Component{
     render () {
       return (
         <div id="outer-container">
-          <Menu pageWrapId={ "page-wrap" } outerContainerId={ "outer-container" } right width={ 200 }>
+          <Menu pageWrapId={ "page-wrap" } outerContainerId={ "outer-container" } right width={ 200 } className='bm-position' >
             <main id="page-wrap">
               <a id="Home" className="menu-item" href="/Home">サイトトップ</a>
               <a id="Page2" className="menu-item" href="/Page2">マイページ</a>
