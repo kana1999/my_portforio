@@ -83,6 +83,14 @@
     color: #FF7171;
   }
 
+  .bm-item menuitem {
+    transition: color 0.3s ease;
+  }
+
+  .bm-item menuitem:hover {
+    color: #FF7171;
+  }
+
   
   /* Individual item */
   .bm-item {
