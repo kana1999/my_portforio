@@ -11,7 +11,7 @@ class Header extends React.Component {
                 Travel Guide
                 </Link>
                 <nav>
-                    <Burger />
+                    
                     {/*<ul className="nav-links">
                         <li>
                         <Link to="/Home">サイトトップ</Link>

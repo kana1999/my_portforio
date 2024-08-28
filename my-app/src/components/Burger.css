@@ -1,10 +1,12 @@
-  /* Position and sizing of burger button */
+
+/* Position and sizing of burger button */
 .bm-burger-button {
     position: fixed;
     width: 36px;
     height: 30px;
     left: initial;
     right: 36px;
+    top: 30px;
   }
   
   /* Color/shape of burger icon bars */

@@ -13,12 +13,16 @@ import { Page4 } from "./components/page4";
 import { Page5 } from "./components/page5";
 
 
+
 class App extends React.Component {
   render(){
     return (
       <BrowserRouter>
         <div className="App">
           <Header />
+
+          <Burger />
+
           {/*<Burger />
           
           <Footer />
