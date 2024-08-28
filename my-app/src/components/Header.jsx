@@ -7,12 +7,12 @@ class Header extends React.Component {
     render() {
         return (
             <header className="header">
-                <Link to="/" className="logo">
+                <Link to="#" className="logo">
                 Travel Guide
                 </Link>
                 <nav>
                     
-                    {/*<ul className="nav-links">
+                    <ul className="nav-links">
                         <li>
                         <Link to="/Home">サイトトップ</Link>
                         </li>
@@ -20,12 +20,13 @@ class Header extends React.Component {
                         <Link to="/Page2">マイページ</Link>
                         </li>
                         <li>
-                        <Link to="/Page5">検索</Link>
+                        <Link to="/Page3">プラン作成</Link>
                         </li>
                         <li>
-                        <Link to="#">メニュー</Link>
+                        <Link to="/Page5">検索</Link>
                         </li>
-                    </ul>*/}
+                        
+                    </ul>
                 </nav>
             </header>
             );
