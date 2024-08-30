@@ -9,7 +9,12 @@
 .Plancategory {
     border:solid 3px #F0E4D7;
     border-radius: 10px;
-    padding: 20px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.FormWrapper {
+    margin: 10px;
 }
 
 input {
