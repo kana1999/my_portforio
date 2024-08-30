@@ -4,27 +4,23 @@ import './page3.css';
 
 export const Page3 = () => {
     const [formData, setFormData] = useState([{
-        name: "",
-        date: "",
+        title: "",
         time: "",
-        caption: "",
-        gender: "",
-        age: "",
-        cost: "",
-        person: ""
+        caption: ""
     }]);
 
+    const [details, setDetails] = useState({
+      gender: "",
+      age: "",
+      cost: "",
+      person: ""
+    });
+
     const addElement = () => {
-    
       setFormData([...formData, {
-          name: "",
-          date: "",
+          title: "",
           time: "",
-          caption: "",
-          gender: "",
-          age: "",
-          cost: "",
-          person: ""
+          caption: ""
       }]);
   };
 
@@ -33,12 +29,20 @@ export const Page3 = () => {
     // handleChange を useCallback でラップ
     const handleChange = useCallback((e, index) => {
         const { name, value } = e.target;
-        
+        if (index !== undefined) {
+          // formData の場合
         setFormData(prevFormData => 
             prevFormData.map((data, i) => 
                 i === index ? { ...data, [name]: value } : data
             )
         );
+      } else {
+        // details の場合
+        setDetails(prevDetails => ({
+            ...prevDetails,
+            [name]: value
+        }));
+      }
     }, []);
 
     function Savedata() {
@@ -51,6 +55,7 @@ export const Page3 = () => {
                 <h1>プラン</h1>
                 <table>
                   <tbody>
+                  <div className="Plancategory">
                     {formData.map((data, index) => (
                         <PlanForm formData={data} handleChange={handleChange} index={index} key={index} />
                     ))}
@@ -58,26 +63,27 @@ export const Page3 = () => {
                     <tr>
                       <td colSpan="2">
                           <button className="PlanDetail">
-                              <Link
-                                  to="/Page4"
+                              <Link to="/Page4"
                                   style={{ textDecoration: 'none', color: 'black', padding: '20px' }}
                               >
-                                  予定を編集する
+                                  内容を編集する
                               </Link>
                           </button>
                           <br />
-                          <button className="deleteFieldBtn">予定を削除</button>
+                          <button className="PlanDateil">予定を削除</button>
                           <br />
-                          <button className="addFieldBtn" onClick={ addElement }>予定を追加</button>
+                          <button className="PlanDateil" onClick={ addElement }>予定を追加</button>
                       </td>
                     </tr>
+                    </div>
+                    {/* gender, age, cost, person のみ一度だけ表示 */}
                     <tr>
                       <th><label>人数:</label></th>
                       <td>
                           <input
                               type="text"
                               name="person"
-                              value={formData.person}
+                              value={details.person}
                               onChange={(e) => handleChange(e)}
                           />
                       </td>
@@ -88,7 +94,7 @@ export const Page3 = () => {
                           <input
                               type="text"
                               name="gender"
-                              value={formData.gender}
+                              value={details.gender}
                               onChange={(e) => handleChange(e)}
                           />
                       </td>
@@ -99,7 +105,7 @@ export const Page3 = () => {
                           <input
                               type="text"
                               name="age"
-                              value={formData.age}
+                              value={details.age}
                               onChange={(e) => handleChange(e)}
                           />
                       </td>
@@ -110,19 +116,18 @@ export const Page3 = () => {
                           <input
                               type="text"
                               name="cost"
-                              value={formData.cost}
+                              value={details.cost}
                               onChange={(e) => handleChange(e)}
                           />
                       </td>
                   </tr>
-
                   </tbody>
-                </table>
-                    <button type="submit">登録</button>
-                <br />
-                <button className="PlanDateil" id="Backpage">
+              </table>
+              <button type="submit" className="PlanDateil" id="Savedata">登録</button>
+              <br />
+              <button className="PlanDateil" id="Backpage">
                     <Link to="/Page2" style={{ textDecoration: 'none', color: 'black', padding: '20px' }}>マイページに戻る</Link>
-                </button>
+              </button>
             </div>
         </div>
     );
@@ -135,23 +140,12 @@ const PlanForm = ({ formData, handleChange, index }) => {
   return (
       <>
         <tr>
-            <th><label>プラン名:</label></th>
+            <th><label>タイトル:</label></th>
             <td>
                 <input
                     type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={(e) => handleChange(e, index)}
-                />
-            </td>
-        </tr>
-        <tr>
-            <th><label>日付:</label></th>
-            <td>
-                <input
-                    type="text"
-                    name="date"
-                    value={formData.date}
+                    name="title"
+                    value={formData.title}
                     onChange={(e) => handleChange(e, index)}
                 />
             </td>
