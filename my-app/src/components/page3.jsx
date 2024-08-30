@@ -55,9 +55,10 @@ export const Page3 = () => {
                 <h1>プラン</h1>
                 <table>
                   <tbody>
-                  <div className="Plancategory">
                     {formData.map((data, index) => (
+                      <div className="Plancategory">
                         <PlanForm formData={data} handleChange={handleChange} index={index} key={index} />
+                    </div>
                     ))}
 
                     <tr>
@@ -75,7 +76,6 @@ export const Page3 = () => {
                           <button className="PlanDateil" onClick={ addElement }>予定を追加</button>
                       </td>
                     </tr>
-                    </div>
                     {/* gender, age, cost, person のみ一度だけ表示 */}
                     <tr>
                       <th><label>人数:</label></th>
@@ -138,6 +138,7 @@ const PlanForm = ({ formData, handleChange, index }) => {
   // 新しい要素を追加する関数
 
   return (
+    <div className="FormWrapper">
       <>
         <tr>
             <th><label>タイトル:</label></th>
@@ -173,6 +174,7 @@ const PlanForm = ({ formData, handleChange, index }) => {
             </td>
         </tr>
       </>
+    </div>
   );
 };
 
