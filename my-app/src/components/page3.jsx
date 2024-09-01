@@ -83,14 +83,21 @@ export const Page3 = () => {
                       </td>
                   </tr>
                   <tr>
-                      <th><label>性別:</label></th>
+                      <th><label>性別:
+                          </label>
+                      </th>
                       <td>
-                          <input
+                          <select name="selectedgender">
+                              <option value="choice">選択してください</option>
+                              <option value="man">男性</option>
+                              <option value="woman">女性</option>
+                          </select>
+                          {/*<input
                               type="text"
                               name="gender"
                               value={details.gender}
                               onChange={(e) => handleChange(e)}
-                          />
+                          />*/}
                       </td>
                   </tr>
                   <tr>
