@@ -25,7 +25,6 @@ export const Page3 = () => {
   };
 
 
-
     // handleChange を useCallback でラップ
     const handleChange = useCallback((e, index) => {
         const { name, value } = e.target;
@@ -53,23 +52,18 @@ export const Page3 = () => {
         <div className="Container" style={{ paddingLeft: '0px', paddingRight: '0px' }}>
             <div className="PlanExsample">
                 <h1>プラン</h1>
+                <br />
                 <table>
                   <tbody>
                     {formData.map((data, index) => (
-                      <div className="Plancategory">
-                        <PlanForm formData={data} handleChange={handleChange} index={index} key={index} />
+                      <div className="PlanCategory" key={index}>
+                        <p>{ index + 1 }日目</p>
+                        <PlanForm formData={data} handleChange={handleChange} index={index}/>
                     </div>
                     ))}
 
                     <tr>
                       <td colSpan="2">
-                          <button className="PlanDetail">
-                              <Link to="/Page4"
-                                  style={{ textDecoration: 'none', color: 'black', padding: '20px' }}
-                              >
-                                  内容を編集する
-                              </Link>
-                          </button>
                           <br />
                           <button className="PlanDateil">予定を削除</button>
                           <br />
@@ -172,6 +166,17 @@ const PlanForm = ({ formData, handleChange, index }) => {
                     onChange={(e) => handleChange(e, index)}
                 />
             </td>
+        </tr>
+        <tr>
+          <td colSpan="2">
+            <button className="PlanDetail">
+              <Link to="/Page4"
+                    style={{ textDecoration: 'none', color: 'black'}}
+              >
+                    内容を編集する
+              </Link>
+            </button>
+          </td>
         </tr>
       </>
     </div>
