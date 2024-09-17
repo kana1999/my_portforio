@@ -1,9 +1,89 @@
+/* プラン（左）とプレビュー（右）を囲う　*/
+.Plan-Container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 5%;
+}
+
+/* プラン（左） */
 .PlanExsample {
     display: flex;
     align-items: stretch;
-    justify-content: space-between;
-    margin-top: 20px;
     margin-bottom: 20px;
+    display: block;
+    width: 55%;
+}
+
+.DayandRemove {
+    display: flex;
+    justify-content:space-between;
+}
+
+.removeButton {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 30px;
+}
+
+.removeButton::before, .removeButton::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px; /* 棒の幅（太さ） */
+    height: 30px; /* 棒の高さ */
+    background: #333;
+    border-radius: 2.5px;
+}
+
+.removeButton::before {
+    transform: translate(-50%,-50%) rotate(45deg);
+}
+
+.removeButton::after {
+    transform: translate(-50%,-50%) rotate(-45deg);
+}
+
+/* プレビュー（右） */
+.Plan-preview {
+    border:solid 3px #F0E4D7;
+    border-radius: 10px;
+    display: block;
+    width: 35%;
+    padding: 20px;
+    text-align: left;
+    margin-top: 30px;
+    white-space: nowrap;
+}
+
+.Preview-Day-count {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+ul {
+    padding-left: 0;
+}
+
+li {
+    list-style: none;
+}
+
+/* プレビュー　*/
+h2 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* タイムスケジュール　*/
+h3 {
+    font-size: 18px;
+    text-decoration: underline;
+    text-decoration-thickness: 0.5em;
+    text-decoration-color: #F5C0C0;
+    text-underline-offset: -0.2em;
+    text-decoration-skip-ink: none;
 }
 
 .PlanCategory {
@@ -12,49 +92,47 @@
     border-radius: 10px;
     padding: 10px;
     margin-bottom: 10px;
+    align-items: start;
+    text-align: left;
+}
+
+.Day-count {
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+    background-color: #9FD8DF;
+    width: 30%;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 5px;
+}
+
+.Plan-details {
+    text-align: left;
+    padding: 10px;
 }
 
 .FormWrapper {
     margin: 10px;
 }
 
-input {
-    margin-top: 5px;
-    margin-bottom: 5x;
-}
-
-.forms {
-    width: fit-content;
-    background-color: #fff;
-    border: 1px solid #ced4da;
-    margin:auto;
-    height: 0px;
-    position: relative;
-    display: flex;
-    box-sizing: border-box;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-direction: column;
+input,select {
+    margin-bottom: 5px;
 }
 
 label {
     display: inline-block;
-    width: 150px;
+    width: 130px;
     vertical-align: top;
 }
 
-.forms th {
-    text-align: left;
-    vertical-align:top;
-}
-
-.PlanDateil {
-    margin: 20px 0 5px;
-}
-
-#Savedata {
-    display: block;
-    margin: auto auto 0 auto;
+.PlanDetail {
+    margin:7px 0 3px;
+    background-color: #F5C0C0;
+    padding: 5px 20px;
+    border: solid 2px #ddd;
+    border-radius: 10px;
+    transition: 0.8s;
 }
 
 #Backpage {
