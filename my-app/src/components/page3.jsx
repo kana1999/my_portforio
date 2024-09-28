@@ -6,11 +6,11 @@ import './page3.css';
 export const Page3 = () => {
   const { register, handleSubmit, control, watch } = useForm({
     defaultValues: {
-      formData: [{ 
+      formData: [[{ 
         title: "",
         time: "",
         caption: ""
-      }],
+      }]],
       details: {
         PlanName: "",
         gender: "",
@@ -21,6 +21,8 @@ export const Page3 = () => {
       }
     },
   });
+
+
 
   const { fields, append, remove } = useFieldArray({
     name: "formData",
@@ -36,6 +38,9 @@ export const Page3 = () => {
       console.log("フォームデータが変更されました:", watchedFormData);
       console.log("詳細情報が変更されました:", watchedDetails);
   }, [watchedFormData, watchedDetails]);
+
+
+
 
   const onSubmit = (data) => {
       alert("登録されました！");
@@ -57,7 +62,7 @@ export const Page3 = () => {
                     <label>プラン名：</label>
                     <input
                       type="text"
-                      placeholder="節約プラン"
+                      placeholder="例：節約プラン"
                       {...register(`details.PlanName`)}
                     />
                   </div>
@@ -109,9 +114,17 @@ export const Page3 = () => {
                             <button type="button" className="removeButton" onClick={() => remove( index )}></button>
                           </div>
                         </div>
+                        {field.map((value, i) => (
+                          <div className="PlanCategory" key={value.id}>
+                            <div>
+                              <button type="button" className="PlanDetail" onClick={() => append([{ title: "", time: "", caption: "" }])}>予定を追加</button>
+                            </div>
+                          </div>
+                        ))}
                         <PlanForm register={register} index={index}/>
                       </div>
                     ))}
+                        
                         <div>
                           <button type="button" className="PlanDetail" onClick={() => append({ title: "", time: "", caption: "" })}>日付を追加</button>
                         </div>
@@ -129,7 +142,7 @@ export const Page3 = () => {
                 <br />
                 <h3>デイリースケジュール</h3>
                   <p>{watchedFormData.title}</p>
-                  {fields.map((field, index) => (
+                  {watchedFormData.map((field, index) => (
                       <div key={field.id}>
                           <p className="Preview-Day-count">{ index + 1 }日目</p>
                         <label>概要: {watchedFormData[index].title}</label>
