@@ -6,11 +6,14 @@ import './page3.css';
 export const Page3 = () => {
   const { register, handleSubmit, control, watch } = useForm({
     defaultValues: {
-      formData: [[{ 
-        title: "",
-        time: "",
-        caption: ""
-      }]],
+      formData: [{
+        day: 1,  // 各日を識別するためのフィールド
+        details: [{  // この配列で複数の予定を管理
+          title: "",
+          time: "",
+          caption: ""
+        }]
+      }],
       details: {
         PlanName: "",
         gender: "",
@@ -22,12 +25,12 @@ export const Page3 = () => {
     },
   });
 
-
-
-  const { fields, append, remove } = useFieldArray({
+  // 可読性向上のため、変数名を定義
+  // const { fields, append, remove } = useFieldArray({
+  const { fields: dayFields, append: appendDay, remove: removeDay } = useFieldArray({
     name: "formData",
     control
-  }); 
+  });
 
   // フォームのデータの監視
   const watchedFormData = watch("formData");
@@ -38,9 +41,6 @@ export const Page3 = () => {
       console.log("フォームデータが変更されました:", watchedFormData);
       console.log("詳細情報が変更されました:", watchedDetails);
   }, [watchedFormData, watchedDetails]);
-
-
-
 
   const onSubmit = (data) => {
       alert("登録されました！");
@@ -106,28 +106,25 @@ export const Page3 = () => {
                       </div>
                     </div>
                     <div>
-                      {fields.map((field, index) => (
-                      <div className="PlanCategory" key={field.id}>
+                    {dayFields.map((dayField, dayIndex) => (
+                      <div key={dayField.id} className="PlanCategory">
                         <div className="DayandRemove">
-                          <p className="Day-count">{ index + 1 }日目</p>
-                          <div>
-                            <button type="button" className="removeButton" onClick={() => remove( index )}></button>
-                          </div>
+                          <p className="Day-count">{ dayIndex + 1 }日目</p>
+                          <button type="button" className="removeButton" onClick={() => removeDay(dayIndex)}></button>
                         </div>
-                        {field.map((value, i) => (
-                          <div className="PlanCategory" key={value.id}>
-                            <div>
-                              <button type="button" className="PlanDetail" onClick={() => append([{ title: "", time: "", caption: "" }])}>予定を追加</button>
-                            </div>
-                          </div>
-                        ))}
-                        <PlanForm register={register} index={index}/>
+
+                        {/* 各日の予定（details）の管理用のコンポーネント追加 */}
+                        <DetailsForm
+                          dayIndex={dayIndex}
+                          register={register}
+                          control={control}
+                        />
+
+                        <button type="button" className="PlanDetail" onClick={() => appendDay({ day: dayIndex + 2, details: [{ title: "", time: "", caption: "" }] })}>
+                          日付を追加
+                        </button>
                       </div>
                     ))}
-                        
-                        <div>
-                          <button type="button" className="PlanDetail" onClick={() => append({ title: "", time: "", caption: "" })}>日付を追加</button>
-                        </div>
 
                   <button type="submit" className="PlanDetail" id="Savedata">登録</button>
                 </div>
@@ -144,7 +141,7 @@ export const Page3 = () => {
                   <p>{watchedFormData.title}</p>
                   {watchedFormData.map((field, index) => (
                       <div key={field.id}>
-                          <p className="Preview-Day-count">{ index + 1 }日目</p>
+                        <p className="Preview-Day-count">{ index + 1 }日目</p>
                         <label>概要: {watchedFormData[index].title}</label>
                       </div>
                     ))}
@@ -199,3 +196,34 @@ const PlanForm = ({ register, index }) => {
   );
 };
 
+const DetailsForm = ({ dayIndex, register, control }) => {
+  const { fields: detailFields, append: appendDetail, remove: removeDetail } = useFieldArray({
+    name: `formData.${dayIndex}.details`,
+    control
+  });
+
+  return (
+    <div>
+      {detailFields.map((detailField, detailIndex) => (
+        <div key={detailField.id}>
+          <div>
+            <label>概要:</label>
+            <input type="text" {...register(`formData.${dayIndex}.details.${detailIndex}.title`)} />
+          </div>
+          <div>
+            <label>時間:</label>
+            <input type="text" {...register(`formData.${dayIndex}.details.${detailIndex}.time`)} />
+          </div>
+          <div>
+            <label>スケジュール内容:</label>
+            <textarea {...register(`formData.${dayIndex}.details.${detailIndex}.caption`)} />
+          </div>
+          <button className="PlanDetail" type="button" onClick={() => removeDetail(detailIndex)}>予定を削除</button>
+        </div>
+      ))}
+      <button className="PlanDetail" type="button" onClick={() => appendDetail({ title: "", time: "", caption: "" })}>
+        予定を追加
+      </button>
+    </div>
+  );
+};
