@@ -11,7 +11,8 @@ export const Page3 = () => {
         details: [{  // この配列で複数の予定を管理
           title: "",
           time: "",
-          caption: ""
+          caption: "",
+          summary: ""
         }]
       }],
       details: {
@@ -52,6 +53,7 @@ export const Page3 = () => {
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="Plan-Container">
               <div className="PlanExsample">
+                <div className="Plan-details">
                   <div>
                     <input
                       type="text"
@@ -67,7 +69,7 @@ export const Page3 = () => {
                     />
                   </div>
                   {/* gender, age, cost, person のみ一度だけ表示 */}
-                  <div className="Plan-details">
+                  
                       <div>
                         <label>旅行期間:</label>
                           <input
@@ -110,6 +112,13 @@ export const Page3 = () => {
                       <div key={dayField.id} className="PlanCategory">
                         <div className="DayandRemove">
                           <p className="Day-count">{ dayIndex + 1 }日目</p>
+                          <div>
+                            <label>概要:</label>
+                              <input
+                                  type="text"
+                                  {...register(`formData.${dayIndex}.summary`)}
+                              />
+                          </div>
                           <button type="button" className="removeButton" onClick={() => removeDay(dayIndex)}></button>
                         </div>
 
@@ -138,11 +147,10 @@ export const Page3 = () => {
                   </ul>
                 <br />
                 <h3>デイリースケジュール</h3>
-                  <p>{watchedFormData.title}</p>
-                  {watchedFormData.map((field, index) => (
-                      <div key={field.id}>
-                        <p className="Preview-Day-count">{ index + 1 }日目</p>
-                        <label>概要: {watchedFormData[index].title}</label>
+                  {watchedFormData.map((dayField, dayIndex) => (
+                      <div key={dayField.id}>
+                        <p className="Preview-Day-count">{ dayIndex + 1 }日目</p>
+                        <label>概要: {watchedFormData[dayIndex].summary}</label>
                       </div>
                     ))}
               </div>
@@ -180,11 +188,11 @@ const PlanForm = ({ register, index }) => {
             />
       </div>
       <div>
-          <label>スケジュール内容:</label>
-            <textarea
-                type="text"
-                {...register(`formData.${index}.caption`)}
-            />
+           <label>スケジュール内容:</label> 
+             <textarea 
+                 type="text" 
+                 {...register(`formData.${index}.caption`)} 
+            />  
       </div>
             <button className="PlanDetail">
               <Link to="/Page4"
@@ -206,17 +214,15 @@ const DetailsForm = ({ dayIndex, register, control }) => {
     <div>
       {detailFields.map((detailField, detailIndex) => (
         <div key={detailField.id}>
-          <div>
-            <label>概要:</label>
-            <input type="text" {...register(`formData.${dayIndex}.details.${detailIndex}.title`)} />
+          <div className="FormWrapper">
+            <input type="text" placeholder="時間を選択" {...register(`formData.${dayIndex}.details.${detailIndex}.time`)} />
+          </div>
+          <div className="FormWrapper">
+            <input type="text" placeholder="予定を記入" {...register(`formData.${dayIndex}.details.${detailIndex}.title`)} />
           </div>
           <div>
-            <label>時間:</label>
-            <input type="text" {...register(`formData.${dayIndex}.details.${detailIndex}.time`)} />
-          </div>
-          <div>
-            <label>スケジュール内容:</label>
-            <textarea {...register(`formData.${dayIndex}.details.${detailIndex}.caption`)} />
+            {/* <label>内容:</label> */}
+            {/* <textarea {...register(`formData.${dayIndex}.details.${detailIndex}.caption`)} /> */}
           </div>
           <button className="PlanDetail" type="button" onClick={() => removeDetail(detailIndex)}>予定を削除</button>
         </div>
