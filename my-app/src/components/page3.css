@@ -114,6 +114,8 @@ h3 {
 
 .FormWrapper {
     margin: 10px;
+    display: inline-block;
+    justify-content: flex-start;
 }
 
 input,select {
