@@ -119,6 +119,7 @@ export const Page3 = () => {
                                   {...register(`formData.${dayIndex}.summary`)}
                               />
                           </div>
+                          {/* 以下は1日単位で削除する×表示のボタン */}
                           <button type="button" className="removeButton" onClick={() => removeDay(dayIndex)}></button>
                         </div>
 
