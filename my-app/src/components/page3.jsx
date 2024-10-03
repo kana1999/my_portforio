@@ -119,7 +119,7 @@ export const Page3 = () => {
                                   {...register(`formData.${dayIndex}.summary`)}
                               />
                           </div>
-                          {/* 以下は1日単位で削除する×表示のボタン */}
+                          {/* 以下は1日単位の枠ごと削除する×表示のボタン */}
                           <button type="button" className="removeButton" onClick={() => removeDay(dayIndex)}></button>
                         </div>
 
@@ -130,11 +130,13 @@ export const Page3 = () => {
                           control={control}
                         />
 
-                        <button type="button" className="PlanDetail" onClick={() => appendDay({ day: dayIndex + 2, details: [{ title: "", time: "", caption: "" }] })}>
-                          日付を追加
-                        </button>
+                        
                       </div>
                     ))}
+
+                    <button type="button" className="PlanDetail" onClick={() => appendDay({ details: [{ title: "", time: "", caption: "" }] })}>
+                          日付を追加
+                        </button>
 
                   <button type="submit" className="PlanDetail" id="Savedata">登録</button>
                 </div>
