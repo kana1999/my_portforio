@@ -55,13 +55,14 @@ export const Page3 = () => {
               <div className="PlanExsample">
                 <div className="Plan-details">
                   <div>
+                    <label className="label1">旅行名：</label>
                     <input
                       type="text"
                       placeholder="旅行名"
                     />
                   </div>
                   <div>
-                    <label>プラン名：</label>
+                    <label className="label1">プラン名：</label>
                     <input
                       type="text"
                       placeholder="例：節約プラン"
@@ -71,21 +72,21 @@ export const Page3 = () => {
                   {/* gender, age, cost, person のみ一度だけ表示 */}
                   
                       <div>
-                        <label>旅行期間:</label>
+                        <label className="label1">旅行期間:</label>
                           <input
                               type="text"
                               {...register(`details.itinerary`)}
                           />
                       </div>
                       <div>
-                        <label>人数:</label>
+                        <label className="label1">人数:</label>
                           <input
                               type="text"
                               {...register(`details.person`)}
                           />
                       </div>
                       <div>
-                        <label>性別:</label>
+                        <label className="label1">性別:</label>
                           <select {...register(`details.gender`)}>
                               <option value="choice">選択してください</option>
                               <option value="man">男性</option>
@@ -93,14 +94,14 @@ export const Page3 = () => {
                           </select>
                       </div>
                       <div>
-                        <label>年齢:</label>
+                        <label className="label1">年齢:</label>
                           <input
                               type="text"
                               {...register(`details.age`)}
                           />
                       </div>
                       <div>
-                        <label>予算:</label>
+                        <label className="label1">予算:</label>
                           <input
                               type="text"
                               {...register(`details.cost`)}
@@ -113,7 +114,7 @@ export const Page3 = () => {
                         <div className="DayandRemove">
                           <p className="Day-count">{ dayIndex + 1 }日目</p>
                           <div>
-                            <label>概要:</label>
+                            <label className="label2">概要:</label>
                               <input
                                   type="text"
                                   {...register(`formData.${dayIndex}.summary`)}
@@ -218,9 +219,11 @@ const DetailsForm = ({ dayIndex, register, control }) => {
       {detailFields.map((detailField, detailIndex) => (
         <div key={detailField.id}>
           <div className="FormWrapper">
+            <label className="label2">時間</label>
             <input type="text" placeholder="時間を選択" {...register(`formData.${dayIndex}.details.${detailIndex}.time`)} />
           </div>
           <div className="FormWrapper">
+            <label className="label2">予定</label>
             <input type="text" placeholder="予定を記入" {...register(`formData.${dayIndex}.details.${detailIndex}.title`)} />
           </div>
           <div>
