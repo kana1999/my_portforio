@@ -58,7 +58,7 @@ export const Page3 = () => {
                     <label className="label1">旅行名：</label>
                     <input
                       type="text"
-                      placeholder="例：大阪旅行"
+                      placeholder="例：京都旅行"
                     />
                   </div>
                   <div>
@@ -117,6 +117,7 @@ export const Page3 = () => {
                             <label className="label2">概要:</label>
                               <input
                                   type="text"
+                                  placeholder="例：寺院巡り"
                                   {...register(`formData.${dayIndex}.summary`)}
                               />
                           </div>
@@ -218,9 +219,10 @@ const DetailsForm = ({ dayIndex, register, control }) => {
     <div>
       {detailFields.map((detailField, detailIndex) => (
         <div key={detailField.id}>
-          <div className="FormWrapper">
-            <label className="label2">時間</label>
-            <select {...register(`formData.${dayIndex}.details.${detailIndex}.time`)}>
+          <div className="buttonClass">
+            <div className="FormWrapper">
+              <label className="label2">時間</label>
+                <select className="label2-option" {...register(`formData.${dayIndex}.details.${detailIndex}.time`)}>
                               <option value="choice">選択してください</option>
                               <option value="7:00">7:00</option>
                               <option value="8:00">8:00</option>
@@ -241,16 +243,18 @@ const DetailsForm = ({ dayIndex, register, control }) => {
                               <option value="23:00">23:00</option>
                               <option value="24:00">24:00</option>
                           </select>
+            </div>
+            <div className="FormWrapper">
+              <label className="label2">予定</label>
+              <input type="text" placeholder="例：清水寺行く" {...register(`formData.${dayIndex}.details.${detailIndex}.title`)} />
+            </div>
+              <button className="buttonDetail" type="button">詳細</button>
+                {/* <label>内容:</label> */}
+                {/* <textarea {...register(`formData.${dayIndex}.details.${detailIndex}.caption`)} /> */}
+              <button className="buttonDetail" id="removeoption" type="button" onClick={() => removeDetail(detailIndex)}>
+                <img className="buttonDetailImage" src="https://loosedrawing.com/assets/illustrations/png/ic034.png" />
+              </button>
           </div>
-          <div className="FormWrapper">
-            <label className="label2">予定</label>
-            <input type="text" placeholder="予定を記入" {...register(`formData.${dayIndex}.details.${detailIndex}.title`)} />
-          </div>
-          <div>
-            {/* <label>内容:</label> */}
-            {/* <textarea {...register(`formData.${dayIndex}.details.${detailIndex}.caption`)} /> */}
-          </div>
-          <button className="PlanDetail" type="button" onClick={() => removeDetail(detailIndex)}>予定を削除</button>
         </div>
       ))}
       <button className="PlanDetail" type="button" onClick={() => appendDetail({ title: "", time: "", caption: "" })}>

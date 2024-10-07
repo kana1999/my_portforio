@@ -24,6 +24,7 @@
     position: relative;
     width: 30px;
     height: 30px;
+    background: transparent;
 }
 
 .removeButton::before, .removeButton::after {
@@ -31,8 +32,8 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 5px; /* 棒の幅（太さ） */
-    height: 30px; /* 棒の高さ */
+    width: 4px; /* 棒の幅（太さ） */
+    height: 20px; /* 棒の高さ */
     background: #333;
     border-radius: 2.5px;
 }
@@ -132,6 +133,12 @@ input,select {
     display: inline-block;
     width: 40px;
     vertical-align: top;
+    font-size: 13px;
+}
+
+.label2-option {
+    display: inline-block;
+    width: 80px;
 }
 
 .PlanDetail {
@@ -142,6 +149,38 @@ input,select {
     border-radius: 10px;
     transition: 0.8s;
 }
+
+.buttonDetail {
+    display: inline-block;
+    position: relative;
+    background: transparent;
+    height: 35px;
+    border: #F5C0C0 solid 2px;
+    border-radius: 10px;
+    font-size: 12px;
+}
+
+.buttonDetailImage {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    padding-right: 4px;
+}
+
+.buttonClass {
+    display: flex;
+}
+
+#removeoption {
+    width: 35px;
+    margin-left: 5px;
+}
+
 
 #Backpage {
     display: block;
