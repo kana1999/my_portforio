@@ -116,6 +116,7 @@ export const Page3 = () => {
                           <div>
                             <label className="label2">概要:</label>
                               <input
+                                  className="exSentence"
                                   type="text"
                                   placeholder="例：寺院巡り"
                                   {...register(`formData.${dayIndex}.summary`)}
@@ -246,7 +247,7 @@ const DetailsForm = ({ dayIndex, register, control }) => {
             </div>
             <div className="FormWrapper">
               <label className="label2">予定</label>
-              <input type="text" placeholder="例：清水寺行く" {...register(`formData.${dayIndex}.details.${detailIndex}.title`)} />
+              <input className="exSentence" type="text" placeholder="例：清水寺行く" {...register(`formData.${dayIndex}.details.${detailIndex}.title`)} />
             </div>
               <button className="buttonDetail" type="button">詳細</button>
                 {/* <label>内容:</label> */}
