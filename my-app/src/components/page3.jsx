@@ -162,7 +162,7 @@ export const Page3 = () => {
               </div>
             </div>
           </form>
-          
+              <button className="PlanDetail" type="button">できあがりを確認する</button>
               <button className="PlanDetail" id="Backpage">
                   <Link to="/Page2" 
                         style={{ textDecoration: 'none', color: 'black', padding: '20px' }}>
