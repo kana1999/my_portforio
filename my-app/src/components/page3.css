@@ -119,24 +119,74 @@ h3 {
     justify-content: flex-start;
 }
 
+/* 以下はアコーディオンメニューです */
+.toggle {
+    display: none;
+}
+
+.label0 {     /* アコーディオン表示文 */
+    padding: 1em;
+	display: block;
+	color: #fff;
+	background:#019ac6;
+}
+
+.label0::before {   /* タイトル横矢印 */
+    content:"";
+	width: 6px;
+	height: 6px;
+	border-top: 2px solid #fff;
+	border-right: 2px solid #fff;
+	-webkit-transform: rotate(45deg);
+	position: absolute;
+	top:calc( 50% - 3px );
+	right: 20px;
+	transform: rotate(135deg);
+}
+
+.label0,
+.accordionContent {    
+    -webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	transform: translateZ(0);
+	transition: all 0.3s;
+}
+
+.accordionContent {     /* 隠す詳細フォーム */
+    height: 0;
+	margin-bottom:10px;
+	padding:0 20px;
+	overflow: hidden;
+}
+
+.toggle:checked + .label0 + .accordionContent {
+    height: auto;
+	padding:20px ;
+	transition: all .3s;
+}
+
+.toggle:checked + .label0::before {
+    transform: rotate(-45deg) !important;
+}
+
 input,select {
     margin-bottom: 5px;
 }
 
-.label1 {
+.label1 {     /* 枠外の詳細フォーム */
     display: inline-block;
     width: 80px;
     vertical-align: top;
 }
 
-.label2 {
+.label2 {    /* 枠内の時間と予定フォーム */
     display: inline-block;
     width: 40px;
     justify-content: center;
     align-items: center;
 }
 
-.label2-option {
+.label2-option {     /* 時間選択欄 */
     display: inline-block;
     width: 80px;
     height: 30px;
@@ -144,7 +194,7 @@ input,select {
     vertical-align: top;
 }
 
-.PlanDetail {
+.PlanDetail {     /* 登録等のボタン */
     margin:7px 0 3px;
     background-color: #F5C0C0;
     padding: 5px 20px;
@@ -153,17 +203,17 @@ input,select {
     transition: 0.8s;
 }
 
-.label2, .buttonDetail, .exSentence {
+.label2, .buttonDetail, .exSentence {     /* 時間・予定・横のボタン */
     font-size: 13px;
     height: 30px;
     line-height: 1.2;
 }
 
-.exSentence {
+.exSentence {     /* 予定記入欄 */
     vertical-align: top;
 }
 
-.buttonDetail {
+.buttonDetail {     /* 予定横の詳細・消去ボタン */
     display: inline-block;
     position: relative;
     top: 10px;

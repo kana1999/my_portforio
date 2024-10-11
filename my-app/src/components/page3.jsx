@@ -54,61 +54,66 @@ export const Page3 = () => {
             <div className="Plan-Container">
               <div className="PlanExsample">
                 <div className="Plan-details">
-                  <div>
-                    <label className="label1">旅行名：</label>
-                    <input
-                      type="text"
-                      placeholder="例：京都旅行"
-                    />
-                  </div>
-                  <div>
-                    <label className="label1">プラン名：</label>
-                    <input
-                      type="text"
-                      placeholder="例：節約プラン"
-                      {...register(`details.PlanName`)}
-                    />
-                  </div>
+                      <div>
+                        <label className="label1">旅行名：</label>
+                        <input
+                          type="text"
+                          placeholder="例：京都旅行"
+                        />
+                      </div>
+                      <div>
+                        <label className="label1">プラン名：</label>
+                        <input
+                          type="text"
+                          placeholder="例：節約プラン"
+                          {...register(`details.PlanName`)}
+                        />
+                      </div>
                   {/* gender, age, cost, person のみ一度だけ表示 */}
-                  
-                      <div>
-                        <label className="label1">旅行期間:</label>
-                          <input
-                              type="text"
-                              {...register(`details.itinerary`)}
-                          />
+                    <div className="accordion">
+                      <input type="radio" className="toggle" />
+                        <label className="label0">クリックして詳細記入</label>
+                          <div className="accordionContent">
+                            <div>
+                              <label className="label1">旅行期間:</label>
+                                <input
+                                    type="text"
+                                    {...register(`details.itinerary`)}
+                                />
+                            </div>
+                            <div>
+                              <label className="label1">人数:</label>
+                                <input
+                                    type="text"
+                                    {...register(`details.person`)}
+                                />
+                            </div>
+                            <div>
+                              <label className="label1">性別:</label>
+                                <select {...register(`details.gender`)}>
+                                    <option value="choice">選択してください</option>
+                                    <option value="man">男性</option>
+                                    <option value="woman">女性</option>
+                                </select>
+                            </div>
+                            <div>
+                              <label className="label1">年齢:</label>
+                                <input
+                                    type="text"
+                                    {...register(`details.age`)}
+                                />
+                            </div>
+                            <div>
+                              <label className="label1">予算:</label>
+                                <input
+                                    type="text"
+                                    {...register(`details.cost`)}
+                                />
+                            </div>
+                          </div>
                       </div>
-                      <div>
-                        <label className="label1">人数:</label>
-                          <input
-                              type="text"
-                              {...register(`details.person`)}
-                          />
-                      </div>
-                      <div>
-                        <label className="label1">性別:</label>
-                          <select {...register(`details.gender`)}>
-                              <option value="choice">選択してください</option>
-                              <option value="man">男性</option>
-                              <option value="woman">女性</option>
-                          </select>
-                      </div>
-                      <div>
-                        <label className="label1">年齢:</label>
-                          <input
-                              type="text"
-                              {...register(`details.age`)}
-                          />
-                      </div>
-                      <div>
-                        <label className="label1">予算:</label>
-                          <input
-                              type="text"
-                              {...register(`details.cost`)}
-                          />
-                      </div>
-                    </div>
-                    <div>
+                  </div>
+                  <div>
                     {dayFields.map((dayField, dayIndex) => (
                       <div key={dayField.id} className="PlanCategory">
                         <div className="DayandRemove">
