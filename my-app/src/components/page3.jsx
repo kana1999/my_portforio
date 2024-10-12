@@ -12,7 +12,7 @@ export const Page3 = () => {
           title: "",
           time: "",
           caption: "",
-          summary: ""
+          Summary: ""
         }]
       }],
       details: {
@@ -71,9 +71,8 @@ export const Page3 = () => {
                       </div>
                   {/* gender, age, cost, person のみ一度だけ表示 */}
                   {/* 以下はアコーディオン仕様 */}
-                    <div className="accordion">
-                      <input type="radio" className="toggle" />
-                        <label className="label0">クリックして詳細記入</label>
+                    <details>
+                        <summary>クリックして詳細記入</summary>
                           <div className="accordionContent">
                             <div>
                                 <label className="label1">旅行期間:</label>
@@ -112,7 +111,7 @@ export const Page3 = () => {
                                 />
                             </div>
                           </div>
-                      </div>
+                    </details>
                   </div>
                   <div>
                     {dayFields.map((dayField, dayIndex) => (
@@ -125,7 +124,7 @@ export const Page3 = () => {
                                   className="exSentence"
                                   type="text"
                                   placeholder="例：寺院巡り"
-                                  {...register(`formData.${dayIndex}.summary`)}
+                                  {...register(`formData.${dayIndex}.Summary`)}
                               />
                           </div>
                           {/* 以下は1日単位の枠ごと削除する×表示のボタン */}
@@ -162,13 +161,13 @@ export const Page3 = () => {
                   {watchedFormData.map((dayField, dayIndex) => (
                       <div key={dayField.id}>
                         <p className="Preview-Day-count">{ dayIndex + 1 }日目</p>
-                        <label>概要: {watchedFormData[dayIndex].summary}</label>
+                        <label>概要: {watchedFormData[dayIndex].Summary}</label>
                       </div>
                     ))}
               </div>
             </div>
           </form>
-              <button className="PlanDetail" type="button">できあがりを確認する</button>
+              <button className="PlanDetail" type="button">確認に進む</button>
               <button className="PlanDetail" id="Backpage">
                   <Link to="/Page2" 
                         style={{ textDecoration: 'none', color: 'black', padding: '20px' }}>
