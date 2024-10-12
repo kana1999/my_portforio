@@ -119,10 +119,10 @@ h3 {
     justify-content: flex-start;
 }
 
-/* 以下はアコーディオンメニューです */
+/* 以下はアコーディオンメニューです 
 .toggle {
     display: none;
-}
+}     */
 
 .label0 {     /* アコーディオン表示文 */
     padding: 1em;
