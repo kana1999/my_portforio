@@ -70,19 +70,20 @@ export const Page3 = () => {
                         />
                       </div>
                   {/* gender, age, cost, person のみ一度だけ表示 */}
+                  {/* 以下はアコーディオン仕様 */}
                     <div className="accordion">
                       <input type="radio" className="toggle" />
                         <label className="label0">クリックして詳細記入</label>
                           <div className="accordionContent">
                             <div>
-                              <label className="label1">旅行期間:</label>
+                                <label className="label1">旅行期間:</label>
                                 <input
                                     type="text"
                                     {...register(`details.itinerary`)}
                                 />
                             </div>
                             <div>
-                              <label className="label1">人数:</label>
+                                <label className="label1">人数:</label>
                                 <input
                                     type="text"
                                     {...register(`details.person`)}
@@ -97,14 +98,14 @@ export const Page3 = () => {
                                 </select>
                             </div>
                             <div>
-                              <label className="label1">年齢:</label>
+                                <label className="label1">年齢:</label>
                                 <input
                                     type="text"
                                     {...register(`details.age`)}
                                 />
                             </div>
                             <div>
-                              <label className="label1">予算:</label>
+                                <label className="label1">予算:</label>
                                 <input
                                     type="text"
                                     {...register(`details.cost`)}
