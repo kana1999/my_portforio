@@ -71,8 +71,8 @@ export const Page3 = () => {
                       </div>
                   {/* gender, age, cost, person のみ一度だけ表示 */}
                   {/* 以下はアコーディオン仕様 */}
-                    <details>
-                        <summary>クリックして詳細記入</summary>
+                    <details open>
+                        <summary>クリックして閉じる</summary>
                           <div className="accordionContent">
                             <div>
                                 <label className="label1">旅行期間:</label>
