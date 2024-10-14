@@ -119,6 +119,17 @@ h3 {
     justify-content: flex-start;
 }
 
+summary {
+    width: 270px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+summary:hover {
+    cursor: pointer;
+    color: #fff;
+    background-color: #F5C0C0;
+  }
 
 input,select {
     margin-bottom: 5px;
