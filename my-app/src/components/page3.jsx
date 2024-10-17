@@ -57,6 +57,7 @@ export const Page3 = () => {
                       <div>
                         <label className="label1">旅行名：</label>
                         <input
+                          className="exSentence"
                           type="text"
                           placeholder="例：京都旅行"
                         />
@@ -64,6 +65,7 @@ export const Page3 = () => {
                       <div>
                         <label className="label1">プラン名：</label>
                         <input
+                          className="exSentence"
                           type="text"
                           placeholder="例：節約プラン"
                           {...register(`details.PlanName`)}
@@ -72,25 +74,29 @@ export const Page3 = () => {
                   {/* gender, age, cost, person のみ一度だけ表示 */}
                   {/* 以下はアコーディオン仕様 */}
                     <details open>
-                        <summary>クリックして閉じる</summary>
+                        <summary></summary>
                           <div className="accordionContent">
                             <div>
                                 <label className="label1">旅行期間:</label>
                                 <input
+                                    className="exSentence"
                                     type="text"
+                                    placeholder="例：20〇〇/△△/××〜△△/□□"
                                     {...register(`details.itinerary`)}
                                 />
                             </div>
                             <div>
                                 <label className="label1">人数:</label>
                                 <input
+                                    className="exSentence"
                                     type="text"
+                                    placeholder="例：3"
                                     {...register(`details.person`)}
                                 />
                             </div>
                             <div>
                               <label className="label1">性別:</label>
-                                <select {...register(`details.gender`)}>
+                                <select className="exSentence" {...register(`details.gender`)}>
                                     <option value="choice">選択してください</option>
                                     <option value="man">男性</option>
                                     <option value="woman">女性</option>
@@ -99,14 +105,18 @@ export const Page3 = () => {
                             <div>
                                 <label className="label1">年齢:</label>
                                 <input
+                                    className="exSentence"
                                     type="text"
+                                    placeholder="例：25"
                                     {...register(`details.age`)}
                                 />
                             </div>
                             <div>
                                 <label className="label1">予算:</label>
                                 <input
+                                    className="exSentence"
                                     type="text"
+                                    placeholder="例：20,000"
                                     {...register(`details.cost`)}
                                 />
                             </div>

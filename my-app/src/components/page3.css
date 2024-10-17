@@ -119,10 +119,18 @@ h3 {
     justify-content: flex-start;
 }
 
+details[open] {
+    height: 203px;
+    transition: .5s;
+}
+
+
 summary {
     width: 270px;
     cursor: pointer;
     transition: .2s;
+    padding-left: .5em;
+    list-style-type: none;
 }
 
 summary:hover {
@@ -131,7 +139,16 @@ summary:hover {
     background-color: #F5C0C0;
   }
 
-input,select {
+summary:before {     /* 閉じているとき */
+	content: " + クリックして開く ";
+}
+
+details[open] summary:before,     /* 開いているとき */
+summary details[open] summary:before {
+	content: " -  クリックして閉じる ";
+}
+
+input, select, summary {
     margin-bottom: 5px;
 }
 
@@ -153,7 +170,7 @@ input,select {
     display: inline-block;
     width: 80px;
     height: 30px;
-    font-size: 13px;
+    font-size: 12px;
     vertical-align: top;
 }
 
