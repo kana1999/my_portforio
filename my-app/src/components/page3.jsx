@@ -74,7 +74,7 @@ export const Page3 = () => {
                   {/* gender, age, cost, person のみ一度だけ表示 */}
                   {/* 以下はアコーディオン仕様 */}
                     <details open>
-                        <summary></summary>
+                        <summary>クリックして閉じる</summary>
                           <div className="accordionContent">
                             <div>
                                 <label className="label1">旅行期間:</label>
@@ -188,42 +188,6 @@ export const Page3 = () => {
     );
 };
 
-// PlanForm コンポーネントの定義
-const PlanForm = ({ register, index }) => {
-  // 新しい要素を追加する関数
-
-  return (
-    <div className="FormWrapper">
-      <div>
-          <label>概要:</label>
-            <input
-                type="text"
-                {...register(`formData.${index}.title`)}
-            />
-      </div>
-      <div>
-          <label>時間:</label>
-            <input
-                type="text"
-                {...register(`formData.${index}.time`)}
-            />
-      </div>
-      <div>
-           <label>スケジュール内容:</label> 
-             <textarea 
-                 type="text" 
-                 {...register(`formData.${index}.caption`)} 
-            />  
-      </div>
-            <button className="PlanDetail">
-              <Link to="/Page4"
-                    style={{ textDecoration: 'none', color: 'black'}}>
-                    内容を編集する
-              </Link>
-            </button>
-    </div>
-  );
-};
 
 const DetailsForm = ({ dayIndex, register, control }) => {
   const { fields: detailFields, append: appendDetail, remove: removeDetail } = useFieldArray({

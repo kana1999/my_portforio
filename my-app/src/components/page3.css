@@ -140,12 +140,12 @@ summary:hover {
   }
 
 summary:before {     /* 閉じているとき */
-	content: " + クリックして開く ";
+	content: " + ";
 }
 
 details[open] summary:before,     /* 開いているとき */
 summary details[open] summary:before {
-	content: " -  クリックして閉じる ";
+	content: " - ";
 }
 
 input, select, summary {
