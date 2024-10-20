@@ -125,7 +125,7 @@ details[open] {
 }
 
 
-summary {
+summary {     /* アコーディオンの背景 */
     width: 270px;
     cursor: pointer;
     transition: .2s;
@@ -139,12 +139,15 @@ summary:hover {
     background-color: #F5C0C0;
   }
 
-summary:before {     /* 閉じているとき */
-	content: " + ";
-}
 
-details[open] summary::after {     /* 開いているとき */
-	content: " - ";
+.summary-not-Clicked,
+.summary-Clicked {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 0.75em;
+    background-color: #999;
+    transition: all 0.3s;
 }
 
 input, select, summary {
