@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useForm, useFieldArray } from 'react-hook-form';
 import React, { useEffect } from "react";
+import { useState } from 'react';
 import './page3.css';
 
 export const Page3 = () => {
@@ -73,55 +74,9 @@ export const Page3 = () => {
                       </div>
                   {/* gender, age, cost, person のみ一度だけ表示 */}
                   {/* 以下はアコーディオン仕様 */}
-                    <details open>
-                        <summary>クリックして閉じる</summary>
-                          <div className="accordionContent">
-                            <div>
-                                <label className="label1">旅行期間:</label>
-                                <input
-                                    className="exSentence"
-                                    type="text"
-                                    placeholder="例：20〇〇/△△/××〜△△/□□"
-                                    {...register(`details.itinerary`)}
-                                />
-                            </div>
-                            <div>
-                                <label className="label1">人数:</label>
-                                <input
-                                    className="exSentence"
-                                    type="text"
-                                    placeholder="例：3"
-                                    {...register(`details.person`)}
-                                />
-                            </div>
-                            <div>
-                              <label className="label1">性別:</label>
-                                <select className="exSentence" {...register(`details.gender`)}>
-                                    <option value="choice">選択してください</option>
-                                    <option value="man">男性</option>
-                                    <option value="woman">女性</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label className="label1">年齢:</label>
-                                <input
-                                    className="exSentence"
-                                    type="text"
-                                    placeholder="例：25"
-                                    {...register(`details.age`)}
-                                />
-                            </div>
-                            <div>
-                                <label className="label1">予算:</label>
-                                <input
-                                    className="exSentence"
-                                    type="text"
-                                    placeholder="例：20,000"
-                                    {...register(`details.cost`)}
-                                />
-                            </div>
-                          </div>
-                    </details>
+                        <Accordion open
+                          register={register}
+                        />
                   </div>
                   <div>
                     {dayFields.map((dayField, dayIndex) => (
@@ -187,6 +142,78 @@ export const Page3 = () => {
         </div>
     );
 };
+
+
+const Accordion = ({register}) => {
+  // アコーディオンの開閉状態を管理するステート
+  const [isOpenAccordion, setIsOpenAccordion] = useState(true);
+
+  // アコーディオンの開閉を切り替える関数
+  const toggleAccordion = () => {
+    setIsOpenAccordion(!isOpenAccordion);
+  };
+
+  return (
+    <div>
+      {/* summaryをクリックしてアコーディオンを開閉 */}
+      <summary onClick={toggleAccordion}>
+        クリックして{isOpenAccordion ? "閉じる" : "開く"}
+      </summary>
+
+      {/* アコーディオンのコンテンツ部分 */}
+      {isOpenAccordion && (
+        <div className="accordion-content">
+          <div>
+                                <label className="label1">旅行期間:</label>
+                                <input
+                                    className="exSentence"
+                                    type="text"
+                                    placeholder="例：20〇〇/△△/××〜△△/□□"
+                                    {...register(`details.itinerary`)}
+                                />
+                            </div>
+                            <div>
+                                <label className="label1">人数:</label>
+                                <input
+                                    className="exSentence"
+                                    type="text"
+                                    placeholder="例：3"
+                                    {...register(`details.person`)}
+                                />
+                            </div>
+                            <div>
+                              <label className="label1">性別:</label>
+                                <select className="exSentence" {...register(`details.gender`)}>
+                                    <option value="choice">選択してください</option>
+                                    <option value="man">男性</option>
+                                    <option value="woman">女性</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label className="label1">年齢:</label>
+                                <input
+                                    className="exSentence"
+                                    type="text"
+                                    placeholder="例：25"
+                                    {...register(`details.age`)}
+                                />
+                            </div>
+                            <div>
+                                <label className="label1">予算:</label>
+                                <input
+                                    className="exSentence"
+                                    type="text"
+                                    placeholder="例：20,000"
+                                    {...register(`details.cost`)}
+                                />
+                            </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default Accordion;
 
 
 const DetailsForm = ({ dayIndex, register, control }) => {

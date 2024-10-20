@@ -143,8 +143,7 @@ summary:before {     /* 閉じているとき */
 	content: " + ";
 }
 
-details[open] summary:before,     /* 開いているとき */
-summary details[open] summary:before {
+details[open] summary::after {     /* 開いているとき */
 	content: " - ";
 }
 
