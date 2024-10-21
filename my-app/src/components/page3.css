@@ -140,6 +140,16 @@ summary:hover {
   }
 
 
+.summary-not-Clicked,
+.summary-Clicked {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 0.75em;
+    background-color: #999;
+    transition: all 0.3s;
+}
+
 input, select, summary {
     margin-bottom: 5px;
 }
