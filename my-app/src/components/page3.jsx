@@ -154,13 +154,15 @@ const Accordion = ({register}) => {
   };
 
   return (
-    <div>
+    <div className="option">
       {/* summaryをクリックしてアコーディオンを開閉 */}
       <summary 
         onClick={toggleAccordion}
-        className={isOpenAccordion ? "summary-not-Clicked" : "summary-clicked"}
-      >
-        {/* {isOpenAccordion ? " - " : " + "}*/}クリックして{isOpenAccordion ? "閉じる" : "開く"} 
+        className={isOpenAccordion ? "summary-not-clicked" : "summary-clicked"}>
+          <span className="summary_inner">
+        クリックして{isOpenAccordion ? "閉じる" : "開く"} 
+          <span className="icon"></span>
+        </span>
       </summary>
       {/* アコーディオンのコンテンツ部分 */}
       {isOpenAccordion && (
