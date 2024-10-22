@@ -119,35 +119,63 @@ h3 {
     justify-content: flex-start;
 }
 
-details[open] {
-    height: 203px;
-    transition: .5s;
+summary {
+    display: block;
 }
 
-
-summary {     /* アコーディオンの背景 */
-    width: 270px;
+.summary_inner {     /* アコーディオンのスタイル */
+    width: 240px;
     cursor: pointer;
     transition: .2s;
     padding-left: .5em;
-    list-style-type: none;
 }
 
 summary:hover {
     cursor: pointer;
     color: #fff;
     background-color: #F5C0C0;
-  }
+    width: 240px;
+}
 
+.option .icon {     /* アコーディオンのアイコン */
+    width: 10px;
+    height: 10px;
+    margin-left: 10px;
+    position: relative;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
 
-.summary-not-Clicked,
-.summary-Clicked {
-    content: "";
+.option .icon::before, 
+.option .icon::after {
+    content: '';
     position: absolute;
+    background-color: #333;
+    transition: transform 0.3s ease;
+}
+
+.option .icon::after {     /* 縦棒：初期状態（開いている）ではマイナスを表現 */
     width: 2px;
-    height: 0.75em;
-    background-color: #999;
-    transition: all 0.3s;
+    height: 10px;
+    top: 0.5px;
+    left: 4px;
+    transform-origin: center;
+    transform: scaleY(1);     /* アコーディオンが開いている時（マイナス） */
+}
+
+.option .icon::before {
+    width: 10px;
+    height: 2px;
+    top: 4.5px;
+    left: 0;
+}
+
+.summary-clicked .icon::after {     /* アコーディオンが閉じた時のプラスアイコン */
+    transform: scaleY(1); /* 縦棒を表示してプラスに */
+}
+
+.summary-not-clicked .icon::after {
+    transform: scaleY(0); /* 縦棒を収縮してマイナスに */
 }
 
 input, select, summary {
