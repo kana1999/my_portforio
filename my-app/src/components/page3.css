@@ -125,6 +125,11 @@ summary {     /* アコーディオンのスタイル */
     cursor: pointer;
     transition: .2s;
     padding-left: .5em;
+    text-decoration: underline;
+    text-decoration-thickness: 0.5em;
+    text-decoration-color: #F5C0C0;
+    text-underline-offset: -0.2em;
+    text-decoration-skip-ink: none;
 }
 
 summary:hover {
@@ -156,8 +161,6 @@ summary:hover {
     height: 10px;
     top: 0.5px;
     left: 4px;
-    transform-origin: center;
-    transform: scaleY(1);     /* アコーディオンが開いている時（マイナス） */
 }
 
 .option .icon::before {
@@ -167,12 +170,12 @@ summary:hover {
     left: 0;
 }
 
-.summary-clicked .icon::after {     /* アコーディオンが閉じた時のプラスアイコン */
-    transform: scaleY(1); /* 縦棒を表示してプラスに */
+.summary-clicked .icon::after {     /* 閉じた時のプラスアイコン */
+    transform: scaleY(1); /* 縦棒を表示（縦に変倍）してプラスに */
 }
 
-.summary-not-clicked .icon::after {
-    transform: scaleY(0); /* 縦棒を収縮してマイナスに */
+.summary-not-clicked .icon::after {     /* 開いた時のマイナスアイコン */
+    transform: scaleY(0); /* 縦棒を収縮（非表示）してマイナスに */
 }
 
 input, select, summary {
