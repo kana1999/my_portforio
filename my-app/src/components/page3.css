@@ -119,11 +119,8 @@ h3 {
     justify-content: flex-start;
 }
 
-summary {
+summary {     /* アコーディオンのスタイル */
     display: block;
-}
-
-.summary_inner {     /* アコーディオンのスタイル */
     width: 240px;
     cursor: pointer;
     transition: .2s;
@@ -140,7 +137,7 @@ summary:hover {
 .option .icon {     /* アコーディオンのアイコン */
     width: 10px;
     height: 10px;
-    margin-left: 10px;
+    margin-right: 10px;
     position: relative;
     display: inline-block;
     transition: transform 0.3s ease;

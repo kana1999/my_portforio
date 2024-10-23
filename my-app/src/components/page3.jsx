@@ -159,10 +159,8 @@ const Accordion = ({register}) => {
       <summary 
         onClick={toggleAccordion}
         className={isOpenAccordion ? "summary-not-clicked" : "summary-clicked"}>
-          <span className="summary_inner">
-        クリックして{isOpenAccordion ? "閉じる" : "開く"} 
           <span className="icon"></span>
-        </span>
+        クリックして{isOpenAccordion ? "閉じる" : "開く"} 
       </summary>
       {/* アコーディオンのコンテンツ部分 */}
       {isOpenAccordion && (
