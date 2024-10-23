@@ -74,10 +74,9 @@ export const Page3 = () => {
                       </div>
                   {/* gender, age, cost, person のみ一度だけ表示 */}
                   {/* 以下はアコーディオン仕様 */}
-                        <Accordion open
-                          register={register}
-                        />
+                        <Accordion register={register} />
                   </div>
+                  {/* 以下は枠付きの1日単位の予定 */}
                   <div>
                     {dayFields.map((dayField, dayIndex) => (
                       <div key={dayField.id} className="PlanCategory">
@@ -102,15 +101,12 @@ export const Page3 = () => {
                           register={register}
                           control={control}
                         />
-
-                        
                       </div>
                     ))}
 
                     <button type="button" className="PlanDetail" onClick={() => appendDay({ details: [{ title: "", time: "", caption: "" }] })}>
                           日付を追加
                         </button>
-
                   <button type="submit" className="PlanDetail" id="Savedata">登録</button>
                 </div>
               </div>
