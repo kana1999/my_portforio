@@ -232,8 +232,7 @@ const DetailsForm = ({ dayIndex, register, control }) => {
                   for="appt-time" 
                   {...register(`formData.${dayIndex}.details.${detailIndex}.time`)}>
                 </label>
-                <input id="appt-time" type="time" name="appt-time" />
-                          
+                <input id="appt-time" type="time" name="appt-time" step="60" />
             </div>
             <div className="FormWrapper">
               <label className="label2">予定</label>
