@@ -139,7 +139,6 @@ export const Page3 = () => {
     );
 };
 
-
 const Accordion = ({register}) => {
   // アコーディオンの開閉状態を管理するステート
   const [isOpenAccordion, setIsOpenAccordion] = useState(true);
