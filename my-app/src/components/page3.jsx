@@ -48,7 +48,7 @@ export const Page3 = () => {
       alert("登録されました！");
       console.log("送信されたデータ:", data);
   };
-  
+
     return (
         <div className="Container">
           <form onSubmit={handleSubmit(onSubmit)}>
@@ -135,6 +135,38 @@ export const Page3 = () => {
                         マイページに戻る
                   </Link>
               </button>
+              <input type="checkbox" id="popup" />
+                <label class="popup-open" for="popup">ポップアップを表示する</label>
+                <div class="popup-overlay">
+                    <div class="popup-window">
+                        <p class="popup-text">詳細を記入できます</p>
+                          <textarea placeholder="◯◯ホテルに荷物置く"></textarea>
+                            <label class="popup-close" for="popup">
+                              <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg">
+                                <line x1="0" y1="0" x2="18" y2="18" stroke="white" stroke-width="3"></line>
+                                <line x1="0" y1="18" x2="18" y2="0" stroke="white" stroke-width="3"></line>
+                              </svg>
+                            </label>
+                    </div>
+                </div>
+
+                <p><button type="button" onclick="document.getElementById('ex-dialog-3').showModal()">名前を入力する</button></p>
+                <dialog id="ex-dialog-3" aria-labelledby="ex-dialog-3-title">
+                  <form method="dialog">
+                    <h3 id="ex-dialog-3-title">名前を入力</h3>
+                    <p><label>名前: <input type="text" required /></label></p>
+                    <p><button type="submit">確定する</button></p>
+                  </form>
+                </dialog>
+
+                <p><button type="button" onclick="document.getElementById('ex-dialog-2').showModal()">詳細を表示する</button></p>
+                  <dialog id="ex-dialog-2" aria-labelledby="ex-dialog-2-title">
+                    <form method="dialog">
+                      <h3 id="ex-dialog-2-title">詳細</h3>
+                      <p>詳細は○○です。</p>
+                      <p><button type="submit">閉じる</button></p>
+                    </form>
+                  </dialog>
         </div>
     );
 };
@@ -147,6 +179,7 @@ const Accordion = ({register}) => {
   const toggleAccordion = () => {
     setIsOpenAccordion(!isOpenAccordion);
   };
+
 
   return (
     <div className="option">
@@ -213,7 +246,6 @@ const Accordion = ({register}) => {
 export default Accordion;
 
 
-
 const DetailsForm = ({ dayIndex, register, control }) => {
   const { fields: detailFields, append: appendDetail, remove: removeDetail } = useFieldArray({
     name: `formData.${dayIndex}.details`,
@@ -238,8 +270,6 @@ const DetailsForm = ({ dayIndex, register, control }) => {
               <input className="exSentence" type="text" placeholder="例：清水寺行く" {...register(`formData.${dayIndex}.details.${detailIndex}.title`)} />
             </div>
               <button className="buttonDetail" type="button">詳細</button>
-                {/* <label>内容:</label> */}
-                {/* <textarea {...register(`formData.${dayIndex}.details.${detailIndex}.caption`)} /> */}
               <button className="buttonDetail" id="removeoption" type="button" onClick={() => removeDetail(detailIndex)}>
                 <img className="buttonDetailImage" src="https://loosedrawing.com/assets/illustrations/png/ic034.png" />
               </button>
