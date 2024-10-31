@@ -49,6 +49,12 @@ export const Page3 = () => {
       console.log("送信されたデータ:", data);
   };
 
+  document.addEventListener('DOMContentLoaded', function () {
+  const btn = document.getElementById(`btn`);
+  btn.addEventListener(`click`, function() {
+     prompt(`名前を入力してください`);
+    })});
+
     return (
         <div className="Container">
           <form onSubmit={handleSubmit(onSubmit)}>
@@ -135,20 +141,6 @@ export const Page3 = () => {
                         マイページに戻る
                   </Link>
               </button>
-              <input type="checkbox" id="popup" />
-                <label class="popup-open" for="popup">ポップアップを表示する</label>
-                  <div class="popup-overlay">
-                      <div class="popup-window">
-                          <p class="popup-text">詳細を記入できます</p>
-                            <textarea placeholder="◯◯ホテルに荷物置く"></textarea>
-                              <label class="popup-close" for="popup">
-                                <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg">
-                                  <line x1="0" y1="0" x2="18" y2="18" stroke="white" stroke-width="3"></line>
-                                  <line x1="0" y1="18" x2="18" y2="0" stroke="white" stroke-width="3"></line>
-                                </svg>
-                              </label>
-                      </div>
-                  </div>
           </div>
     );
 };
@@ -251,19 +243,7 @@ const DetailsForm = ({ dayIndex, register, control }) => {
               <label className="label2">予定</label>
               <input className="exSentence" type="text" placeholder="例：清水寺行く" {...register(`formData.${dayIndex}.details.${detailIndex}.title`)} />
             </div>
-
-            <div class="button-container">
-                <label class="button-sample1" for="popupFlag1">詳細</label>
-              </div>
-              <input type="checkbox" class="popup-flag" id="popupFlag1" />
-                <label class="popup-background" for="popupFlag1"></label>
-                  <div class="popup">
-                    <label class="close-button" for="popupFlag1">×</label>
-                    <div class="content">
-                        <h5>詳細記入できます</h5>
-                        <textarea placeholder="◯◯ホテルに荷物置く"></textarea>
-                    </div>
-                </div>
+                <button className="buttonDetail" type="button">詳細</button>
 
               <button className="buttonDetail" id="removeoption" type="button" onClick={() => removeDetail(detailIndex)}>
                 <img className="buttonDetailImage" src="https://loosedrawing.com/assets/illustrations/png/ic034.png" />
