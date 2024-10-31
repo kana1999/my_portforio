@@ -221,9 +221,15 @@ input, select, summary {
     display: inline-block;
     position: relative;
     top: 10px;
-    background: transparent;
+    background-color: white;
     border: 1px solid #333;
     border-radius: 10px;
+    transition: 0.2s;
+}
+
+.buttonDetail:hover {
+    color: white;
+    background-color: #F5C0C0;
 }
 
 .buttonDetailImage {
@@ -247,172 +253,8 @@ input, select, summary {
     margin-left: 5px;
 }
 
-
 #Backpage {
     display: block;
     margin: auto auto 0 auto;
 }
 
-
-#popup {
-    display: none; /* label でコントロールするので input は非表示に */
-  }
-  
-  .popup-open {
-    cursor: pointer; /* マウスオーバーでカーソルの形状を変えることで、クリックできる要素だとわかりやすいように */
-  }
-  
-  .popup-overlay {
-    display: none; /* input にチェックが入るまでは非表示に */
-  }
-  
-  #popup:checked ~ .popup-overlay {
-    display: block;
-    z-index: 99999;
-    background-color: #00000070;
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    top: 0;
-    left: 0;
-  }
-  
-  .popup-window {
-    width: 90vw;
-    max-width: 560px;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 6px;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  
-  .popup-text {
-    margin: 0;
-  }
-  
-  .popup-text:not(:last-of-type) {
-    margin-bottom: 1em
-  }
-  
-  .popup-close {
-    cursor: pointer;
-    position: absolute;
-    top: -26px;
-    right: 0;
-  }
-
-  #popover {
-    padding: 20px; /* 領域の余白調整 */
-    background: #498fac; /* 背景色の変更 */
-    color: #fff; /* 文字色の変更 */
-    font-weight: bold; /* 太字の設定 */
-    letter-spacing: 2px; /* 文字間の変更 */
-}
-
-/* 1029ポップアップサンプル */
-/*popup template design*/
-.popup-background{
-    /*position size*/
-    position: fixed;
-    z-index : 100;
-    top : 0;
-    left : 0;
-    height : 100vh;
-    width : 100vw;
-  
-    /*design*/
-    background-color: gray;
-    opacity : 0.5
-  }
-  
-  .popup{
-    /*position size*/
-    --height : 300px;
-    --width : 300px;
-    z-index : 101;
-    position: fixed;
-    top : calc(50vh - calc(var(--height) / 2));
-    left : calc(50vw - calc(var(--width) / 2));
-    height : var(--height);
-    width : var(--width);
-  
-    /*design*/
-    overflow : hidden;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0px 0px 3px 1px gray;
-  }
-  
-  .popup > .close-button{
-    /*position size*/
-    --size : 20px;
-    position:absolute;
-    top : calc(var(--size)/4);
-    left : calc(var(--width) - var(--size) * 5/4);/*css variables are available in children*/
-    height : var(--size);
-    width : var(--size);
-  
-    /*design*/
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: transparent;
-    color : gray;
-    font-size: var(--size);
-    border-radius: calc(var(--size)/5);
-  }
-  .popup > .content{
-    padding: 10px;
-    text-align: center;
-  }
-    
-  /*hide popup*/
-  .popup-flag{
-    display: none;
-  }
-  
-  .popup-flag:not(:checked) + .popup-background{
-    display:none;
-  }
-  
-  .popup-flag:not(:checked) + * + .popup{
-    display:none;
-  }
-  
-  /*button-container*/
-  .button-container{
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-direction: column;
-  }
-  
-  .button-container > *{
-    margin : 15px;
-  }
-  
-  /*button1*/
-  .button-sample1{
-    color: #333;
-    font-size: 13px;
-    background-color: white;
-    border : 1px solid #F5C0C0;
-    cursor: pointer;
-    padding: 5px 15px;
-    border-radius: 8px;
-    transition: 0.2s;
-  }
-  
-  .button-sample1:hover{
-    color: white;
-    background-color: #F5C0C0;
-  }
-  
-  .button-sample1:active{
-    color: white;
-    background-color: #F5C0C0;
-    transition: 0.05s;
-  }
