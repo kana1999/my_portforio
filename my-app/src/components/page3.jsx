@@ -49,12 +49,6 @@ export const Page3 = () => {
       console.log("送信されたデータ:", data);
   };
 
-  document.addEventListener('DOMContentLoaded', function () {
-  const btn = document.getElementById(`btn`);
-  btn.addEventListener(`click`, function() {
-     prompt(`名前を入力してください`);
-    })});
-
     return (
         <div className="Container">
           <form onSubmit={handleSubmit(onSubmit)}>
@@ -154,7 +148,6 @@ const Accordion = ({register}) => {
     setIsOpenAccordion(!isOpenAccordion);
   };
 
-
   return (
     <div className="option">
       {/* summaryをクリックしてアコーディオンを開閉 */}
@@ -226,6 +219,25 @@ const DetailsForm = ({ dayIndex, register, control }) => {
     control
   });
 
+  // 各詳細項目ごとのポップアップを追跡するためのState
+  const [popupIndex, setPopupIndex] = useState(null);
+  const [detailInputs, setDetailInputs] = useState({});
+
+  const openPopup = (index) => {
+    setPopupIndex(index);
+  };
+
+  const closePopup = () => {
+    setPopupIndex(null);
+  };
+
+  const handleDetailInputChange = (index, value) => {
+    setDetailInputs({
+      ...detailInputs,
+      [index]: value,
+    });
+  };
+
   return (
     <div>
       {detailFields.map((detailField, detailIndex) => (
@@ -233,22 +245,42 @@ const DetailsForm = ({ dayIndex, register, control }) => {
           <div className="buttonClass">
             <div className="FormWrapper">
               <label className="label2">時間</label>
-                <label  
-                  for="appt-time" 
-                  {...register(`formData.${dayIndex}.details.${detailIndex}.time`)}>
-                </label>
-                <input id="appt-time" type="time" name="appt-time" step="60" />
+                <input  
+                  id={`appt-time-${detailIndex}`}
+                  type="time" 
+                  {...register(`formData.${dayIndex}.details.${detailIndex}.time`)}/>
             </div>
             <div className="FormWrapper">
               <label className="label2">予定</label>
               <input className="exSentence" type="text" placeholder="例：清水寺行く" {...register(`formData.${dayIndex}.details.${detailIndex}.title`)} />
             </div>
-                <button className="buttonDetail" type="button">詳細</button>
+                {/* ポップアップを開くための詳細ボタン */}
+                <button className="buttonDetail" type="button" onClick={() => openPopup(detailIndex)}>詳細</button>
 
-              <button className="buttonDetail" id="removeoption" type="button" onClick={() => removeDetail(detailIndex)}>
-                <img className="buttonDetailImage" src="https://loosedrawing.com/assets/illustrations/png/ic034.png" />
-              </button> 
+                {/* 削除ボタン */}
+                <button className="buttonDetail" id="removeoption" type="button" onClick={() => removeDetail(detailIndex)}>
+                    <img className="buttonDetailImage" src="https://loosedrawing.com/assets/illustrations/png/ic034.png" />
+                </button> 
           </div>
+                {/* 各詳細のポップアップダイアログ */}
+                {popupIndex === detailIndex && (
+                  <div className="popup-overlay">
+                    <div className="popup-window">
+                      <span className="close" onClick={closePopup}>
+                        &times;
+                      </span>
+                      <h3>詳細情報を入力</h3>
+                      <textarea
+                        placeholder="例：◯◯ホテルに荷物置く"
+                        value={detailInputs[detailIndex] || ''}
+                        onChange={(e) => handleDetailInputChange(detailIndex, e.target.value)}
+                      />
+                      <button type="button" onClick={closePopup}>
+                        保存
+                      </button>
+                    </div>
+                  </div>
+                )}
         </div>
       ))}
       <button className="PlanDetail" type="button" onClick={() => appendDetail({ title: "", time: "", caption: "" })}>
