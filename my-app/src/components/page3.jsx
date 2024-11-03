@@ -271,12 +271,16 @@ const DetailsForm = ({ dayIndex, register, control }) => {
                       </span>
                       <h3>詳細情報を入力</h3>
                       <textarea
-                        placeholder="例：◯◯ホテルに荷物置く"
+                        className="popuptextarea"
+                        placeholder="例：◯◯ホテルにチェックイン、荷物置く"
                         value={detailInputs[detailIndex] || ''}
                         onChange={(e) => handleDetailInputChange(detailIndex, e.target.value)}
                       />
-                      <button type="button" onClick={closePopup}>
+                      <button type="button" className="keepbutton" onClick={closePopup}>
                         保存
+                      </button>
+                      <button type="button" className="cancelbutton" onClick={closePopup}>
+                        キャンセル
                       </button>
                     </div>
                   </div>
