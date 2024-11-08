@@ -257,7 +257,7 @@ const DetailsForm = ({ dayIndex, register, control }) => {
             </div>
             <div className="tooltipbox">
                 {/* ポップアップを開くための詳細ボタン */}
-                <button className="buttonDetail" type="button" onClick={() => openPopup(detailIndex)}>詳細</button>
+                <button className="buttonDetail" type="button" id="c-tooltip" data-tooltip="詳細の表示" onClick={() => openPopup(detailIndex)}>詳細</button>
             </div>
                 {/* 削除ボタン */}
                 <button className="buttonDetail" id="removeoption" type="button" onClick={() => removeDetail(detailIndex)}>
@@ -292,54 +292,3 @@ const DetailsForm = ({ dayIndex, register, control }) => {
     </div>
   );
 };
-
-// ツールチップ
-function Tooltip()
-{
-    // 内容
-    this.content = document.createElement( 'div' );
-    this.content.className = 'tooltip-content';
-
-    // 影
-    this.shadow = document.createElement( 'div' );
-    this.shadow.className = 'tooltip-shadow';
-
-    this.shadow.appendChild( this.content );
-}
-
-Tooltip.DELAY = 300; // 表示するまでの遅延時間
-Tooltip.OFFSET = 5;  // マウスポインタからのオフセット
-
-// ツールチップを表示する
-Tooltip.prototype.Show = function( text, x, y )
-{
-    // 内容
-    while( this.content.hasChildNodes() )
-    {
-        this.content.removeChild( this.content.lastChild );
-    }
-    this.content.appendChild( document.createTextNode( text ) );
-
-    // 影
-    this.shadow.style.left = x + 'px';
-    this.shadow.style.top = y + 'px';
-    this.shadow.style.visibility = 'visible';
-
-
-    if( this.shadow.parentNode != document.body )
-    {
-        // ドキュメントのbody要素に追加する
-        document.body.appendChild( this.shadow );
-    }
-}
-
-// ツールチップを隠す
-Tooltip.prototype.Hide = function()
-{
-    this.shadow.style.visibility = 'hidden';
-}
-  // ツールチップを生成する
-  const tooltip = new Tooltip();
-
-<p onmouseover="tooltip.Schedule( this, event );" tooltip="ツールチップ">
-テキスト</p>
