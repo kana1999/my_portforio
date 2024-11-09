@@ -257,7 +257,7 @@ const DetailsForm = ({ dayIndex, register, control }) => {
             </div>
             <div className="tooltipbox">
                 {/* ポップアップを開くための詳細ボタン */}
-                <button className="buttonDetail" type="button" id="c-tooltip" data-tooltip="詳細の表示" onClick={() => openPopup(detailIndex)}>詳細</button>
+                <button className="buttonDetail" type="button" id="c-tooltip" data-tooltip={detailInputs[detailIndex] || ''} onClick={() => openPopup(detailIndex)}>詳細</button>
             </div>
                 {/* 削除ボタン */}
                 <button className="buttonDetail" id="removeoption" type="button" onClick={() => removeDetail(detailIndex)}>
