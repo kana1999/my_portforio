@@ -238,6 +238,11 @@ const DetailsForm = ({ dayIndex, register, control }) => {
     });
   };
 
+  const handleTooltipText = (text) => {
+    // 文字数制限を設定（15文字まで）
+    return text.length > 15 ? text.substring(0, 15) + '...' : text;
+  };
+
 
   return (
     <div>
@@ -255,10 +260,8 @@ const DetailsForm = ({ dayIndex, register, control }) => {
               <label className="label2">予定</label>
               <input className="exSentence" type="text" placeholder="例：清水寺行く" {...register(`formData.${dayIndex}.details.${detailIndex}.title`)} />
             </div>
-            <div className="tooltipbox">
                 {/* ポップアップを開くための詳細ボタン */}
-                <button className="buttonDetail" type="button" id="c-tooltip" data-tooltip={detailInputs[detailIndex] || ''} onClick={() => openPopup(detailIndex)}>詳細</button>
-            </div>
+                <button className="buttonDetail" type="button" id="c-tooltip" data-tooltip={handleTooltipText(detailInputs[detailIndex] || '詳細内容が表示されます')} onClick={() => openPopup(detailIndex)}>詳細</button>
                 {/* 削除ボタン */}
                 <button className="buttonDetail" id="removeoption" type="button" onClick={() => removeDetail(detailIndex)}>
                     <img className="buttonDetailImage" src="https://loosedrawing.com/assets/illustrations/png/ic034.png" />
