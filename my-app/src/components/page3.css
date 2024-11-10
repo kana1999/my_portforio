@@ -325,12 +325,15 @@ input, select, summary {
 	transition: all 0.2s;
 	visibility: hidden;
 	z-index: 11;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* ツールチップ吹き出しのひげ */
 #c-tooltip::before {
 	-webkit-transform: translateY(-50%);
-	border-color: transparent #5f6368 transparent transparent;
+	border-color: transparent #5f6368;
 	border-style: solid;
 	border-width: 3px 7px 3px 0;
 	content: "";
