@@ -261,7 +261,10 @@ const DetailsForm = ({ dayIndex, register, control }) => {
               <input className="exSentence" type="text" placeholder="例：清水寺行く" {...register(`formData.${dayIndex}.details.${detailIndex}.title`)} />
             </div>
                 {/* ポップアップを開くための詳細ボタン */}
-                <button className="buttonDetail" type="button" id="c-tooltip" data-tooltip={handleTooltipText(detailInputs[detailIndex] || '詳細内容が表示されます')} onClick={() => openPopup(detailIndex)}>詳細</button>
+                <button className="buttonDetail" type="button" 
+                        id="c-tooltip" data-tooltip={handleTooltipText(detailInputs[detailIndex] || '詳細内容が表示されます')} 
+                        onClick={() => openPopup(detailIndex)}>詳細
+                </button>
                 {/* 削除ボタン */}
                 <button className="buttonDetail" id="removeoption" type="button" onClick={() => removeDetail(detailIndex)}>
                     <img className="buttonDetailImage" src="https://loosedrawing.com/assets/illustrations/png/ic034.png" />
