@@ -104,14 +104,26 @@ export const Page3 = () => {
                       </div>
                     ))}
 
-                    <button type="button" className="PlanDetail" onClick={() => appendDay({ details: [{ title: "", time: "", caption: "" }] })}>
+                    <div className="appendbutton">
+                      <button type="button" className="PlanDetail" onClick={() => appendDay({ details: [{ title: "", time: "", caption: "" }] })}>
                           日付を追加
-                        </button>
-                  <button type="submit" className="PlanDetail" id="Savedata">登録</button>
+                      </button>
+                    </div>
                 </div>
               </div>
+
               <div className="Plan-preview">
-                <h2>プレビュー</h2>
+                <div className="checkelement">
+                  <h2>プレビュー</h2>
+                    <button className="PlanDetail" type="button">確認に進む</button>
+                    {/*<button className="PlanDetail" type="submit" id="Savedata">登録</button>
+                   <button className="PlanDetail" id="Backpage">
+                          <Link to="/Page2"  
+                            style={{ textDecoration: 'none', color: 'black', padding: '20px' }}>
+                            マイページに戻る
+                          </Link>  
+                  </button> */}
+                </div>
                   <ul>
                     <li>プラン名：{watchedDetails.PlanName}</li>
                     <li>旅行期間：{watchedDetails.itinerary}</li>
@@ -128,13 +140,6 @@ export const Page3 = () => {
               </div>
             </div>
           </form>
-              <button className="PlanDetail" type="button">確認に進む</button>
-              <button className="PlanDetail" id="Backpage">
-                  <Link to="/Page2" 
-                        style={{ textDecoration: 'none', color: 'black', padding: '20px' }}>
-                        マイページに戻る
-                  </Link>
-              </button>
           </div>
     );
 };
@@ -292,9 +297,11 @@ const DetailsForm = ({ dayIndex, register, control }) => {
                 )}
         </div>
       ))}
-      <button className="PlanDetail" type="button" onClick={() => appendDetail({ title: "", time: "", caption: "" })}>
-        予定を追加
-      </button>
+      <div className="appendbutton">
+        <button className="PlanDetail" type="button" onClick={() => appendDetail({ title: "", time: "", caption: "" })}>
+          予定を追加
+        </button>
+      </div>
     </div>
   );
 };

@@ -46,6 +46,11 @@
     transform: translate(-50%,-50%) rotate(-45deg);
 }
 
+.checkelement {
+    display: flex;
+    justify-content: space-between;
+}
+
 /* プレビュー（右） */
 .Plan-preview {
     border:solid 3px #F0E4D7;
@@ -198,12 +203,22 @@ input, select, summary {
 }
 
 .PlanDetail {     /* 登録等のボタン */
-    margin:7px 0 3px;
-    background-color: #F5C0C0;
-    padding: 5px 20px;
-    border: solid 2px #ddd;
+    font-size: 13px;
+    padding: 5px 10px;
+    background-color: white;
+    border: 1px solid #817b7b;
     border-radius: 10px;
-    transition: 0.8s;
+    transition: 0.2s;
+}
+
+.PlanDetail:hover {
+    color: white;
+    background-color: #F5C0C0;
+}
+
+.appendbutton {
+    display: flex;
+    justify-content: flex-end;
 }
 
 .label2, .buttonDetail, .exSentence {     /* 時間・予定・横のボタン */
@@ -222,7 +237,7 @@ input, select, summary {
     position: relative;
     top: 10px;
     background-color: white;
-    border: 1px solid #333;
+    border: 1px solid #817b7b;
     border-radius: 10px;
     transition: 0.2s;
 }
