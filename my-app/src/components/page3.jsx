@@ -49,8 +49,68 @@ export const Page3 = () => {
       console.log("送信されたデータ:", data);
   };
 
+  window.addEventListener('load', () => {
+    // checkbox
+    const checkbox1 = document.getElementById("hoge1");
+    const checkbox2 = document.getElementById("hoge2");
+
+    // label
+    const label1 = document.getElementById("hoge1Label");
+    const label2 = document.getElementById("hoge2Label");
+
+    // タブの内容部分
+    const hoge1Content = document.getElementById("left-container");
+    const hoge2Content = document.getElementById("right-container");
+
+    // 初期表示設定
+    hoge1Content.style.display = "block";
+    hoge2Content.style.display = "none";
+
+    // hoge1タブのクリック時
+    checkbox1.addEventListener("change", function () {
+        if (this.checked) {
+            // hoge1タブ見出しのチェックボックスがtrueの時
+            label1.style.backgroundColor = "rgb(186, 238, 255)";
+            hoge1Content.style.display = "block";
+            label2.style.backgroundColor = "white";
+            hoge2Content.style.display = "none";
+            checkbox2.checked = false;
+        }
+    });
+
+    // hoge2タブのクリック時
+    checkbox2.addEventListener("change", function () {
+        if (this.checked) {
+            // hoge2タブ見出しのチェックボックスがtrueの時
+            label2.style.backgroundColor = "pink";
+            hoge2Content.style.display = "block";
+            label1.style.backgroundColor = "white";
+            hoge1Content.style.display = "none";
+            checkbox1.checked = false;
+        }
+    });
+});
+
     return (
         <div className="Container">
+          {/* タブの見出し */}
+          <div id="label-container">
+            <input type="checkbox" class="checkBtn" id="hoge1" checked />
+            <label id="hoge1Label" for="hoge1">hoge1タブ見出し</label>
+            <input type="checkbox" class="checkBtn" id="hoge2" />
+            <label id="hoge2Label" for="hoge2">hoge2タブ見出し</label>
+          </div>
+
+          {/* タブの内容部分  */}
+          <div id="left-container">
+              <h1>hoge1タブ</h1>
+              <p>hoge1hoge1</p>
+          </div>
+          <div id="right-container">
+              <h1>hoge2タブ</h1>
+              <p>hoge2hoge2</p>
+          </div>
+
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="Plan-Container">
               <div className="PlanExsample">

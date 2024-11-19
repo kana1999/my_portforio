@@ -393,3 +393,56 @@ input, select, summary {
 	opacity: 1;
 	visibility: visible;
 }
+
+/* チェックボックス */
+.checkBtn {
+    display: none;
+}
+
+/* ラベル */
+#label-container {
+    width: 40%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#hoge1Label {
+    padding: 10px 10px 0 10px;
+    background-color: rgb(186, 238, 255);
+    border-radius: 3px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+#hoge2Label {
+    padding: 10px 10px 0 10px;
+    border-radius: 3px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+/* hoge1タブ */
+#left-container {
+    display: block;
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    background-color: rgb(186, 238, 255);
+    border-bottom: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: 0.2s;
+}
+
+/* hoge2タブ */
+#right-container {
+    display: none;
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    background-color: pink;
+    border-bottom: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: 0.2s;
+}
