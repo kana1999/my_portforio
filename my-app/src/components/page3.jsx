@@ -71,15 +71,15 @@ export const Page3 = () => {
 
           {/* タブの内容 */}
           <div id="tab-container">
-     {/* ラジオボタン  */}
+          {/* ラジオボタン  */}
             <input type="radio" id="hoge1" name="tab" checked/>
-            <label for="hoge1">hoge1タブ見出し</label>
+            <label for="hoge1">{watchedDetails.PlanName}</label>
 
             <input type="radio" id="hoge2" name="tab"/>
-            <label for="hoge2">hoge2タブ見出し</label>
+            <label className="hoge2" for="hoge2">hoge2タブ見出し</label>
 
             {/* タブ内容  */}
-            <div id="left-container">hoge1タブ内容</div>
+            <div id="left-container">{watchedDetails.PlanName}の内容</div>
             <div id="right-container">hoge2タブ内容</div>
           </div>
 
