@@ -305,7 +305,7 @@ const DetailsForm = ({ dayIndex, register, control }) => {
                 </button>
                 {/* 削除ボタン */}
                 <button className="buttonDetail" id="removeoption" type="button" onClick={() => removeDetail(detailIndex)}>
-                    <img className="buttonDetailImage" src="https://loosedrawing.com/assets/illustrations/png/ic034.png" />
+                    <img className="buttonDetailImage" src="https://loosedrawing.com/assets/illustrations/png/ic034.png" alt="削除"/>
                 </button> 
           </div>
                 {/* 各詳細のポップアップダイアログ */}
